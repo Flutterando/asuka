@@ -8,5 +8,6 @@ void main() {
     expect(() => asuka.hideCurrentSnackBar(), throwsAssertionError);
     expect(() => asuka.removeCurrentSnackBar(), throwsAssertionError);
     expect(() => asuka.showBottomSheet(null), throwsAssertionError);
+    expect(() => asuka.showDialog(), throwsAssertionError);
   });
 }
