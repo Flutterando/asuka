@@ -158,6 +158,7 @@ Future<T> showDialog<T>(
     bool useSafeArea = true,
     bool useRootNavigator = true,
     RouteSettings routeSettings}) {
+  _checkBuilderIsInMaterialApp();
   return _dialogs.showDialogListener(builder: builder);
 }
 
