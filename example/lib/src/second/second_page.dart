@@ -13,17 +13,69 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("Asuka"),
-      ),
-      body: Center(
-        child: RaisedButton(
-            child: Text('Back to Home'),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
-      ),
-    );
+        resizeToAvoidBottomInset: false,
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text("Asuka"),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextField(),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              RaisedButton(
+                  child: Text('Back to Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              
+            ],
+          ),
+        ));
   }
 }

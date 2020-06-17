@@ -195,6 +195,7 @@ class __BuildPageState extends State<_BuildPage> implements _ListenerInterface {
   @override
   Widget build(BuildContext context) {
     return material.Scaffold(
+      resizeToAvoidBottomInset: false,
       key: _keyScaff,
       body: widget.child,
     );
