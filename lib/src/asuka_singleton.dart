@@ -159,7 +159,13 @@ Future<T> showDialog<T>(
     bool useRootNavigator = true,
     RouteSettings routeSettings}) {
   _checkBuilderIsInMaterialApp();
-  return _dialogs.showDialogListener(builder: builder);
+  return _dialogs.showDialogListener(
+    builder: builder,
+    barrierDismissible: barrierDismissible,
+    barrierColor: barrierColor,
+    useSafeArea: useSafeArea,
+    routeSettings: routeSettings,
+  );
 }
 
 /// init Asuka: Add in your MaterialApp
@@ -209,7 +215,15 @@ class __BuildPageState extends State<_BuildPage> implements _ListenerInterface {
       bool useSafeArea = true,
       bool useRootNavigator = true,
       material.RouteSettings routeSettings}) {
-    return material.showDialog(context: context, builder: builder);
+    return material.showDialog(
+      context: context,
+      builder: builder,
+      barrierDismissible: barrierDismissible,
+      barrierColor: barrierColor,
+      useSafeArea: useSafeArea,
+      useRootNavigator: useRootNavigator,
+      routeSettings: routeSettings,
+    );
   }
 }
 

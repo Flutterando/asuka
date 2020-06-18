@@ -1,4 +1,4 @@
-## [1.0.1] - 17/06/2020.
+## [1.0.2] - 18cv/06/2020.
 
 * Fix [#1](https://github.com/Flutterando/asuka/issues/1)
 
