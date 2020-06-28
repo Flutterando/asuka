@@ -14,6 +14,33 @@ void _checkBuilderIsInMaterialApp() {
   """);
 }
 
+/// Insert the given entry into the overlay.
+///
+/// If `below` is non-null, the entry is inserted just below `below`.
+/// If `above` is non-null, the entry is inserted just above `above`.
+/// Otherwise, the entry is inserted on top.
+///
+/// It is an error to specify both `above` and `below`.
+void addOverlay(OverlayEntry entry, {OverlayEntry below, OverlayEntry above}) {
+  _checkBuilderIsInMaterialApp();
+  Overlay.of(_keyScaff.currentContext)
+      .insert(entry, below: below, above: above);
+}
+
+/// Insert all the entries in the given iterable.
+///
+/// If `below` is non-null, the entries are inserted just below `below`.
+/// If `above` is non-null, the entries are inserted just above `above`.
+/// Otherwise, the entries are inserted on top.
+///
+/// It is an error to specify both `above` and `below`.
+void ainsertAllOverlay(Iterable<OverlayEntry> entries,
+    {OverlayEntry below, OverlayEntry above}) {
+  _checkBuilderIsInMaterialApp();
+  Overlay.of(_keyScaff.currentContext)
+      .insertAll(entries, below: below, above: above);
+}
+
 /// Shows a [SnackBar] at the bottom of the scaffold.
 ///
 /// A scaffold can show at most one snack bar at a time. If this function is

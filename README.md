@@ -39,6 +39,26 @@ asuka.showSnackBar(SnackBar(
 
 ```
 
+### Overlay
+
+```dart
+import 'package:asuka/asuka.dart' as asuka;
+
+var entry = OverlayEntry(
+    builder: (context) {
+    return Center(
+        child: CircularProgressIndicator(),
+    );
+  },
+);
+
+asuka.addOverlay(entry);
+
+//after
+entry.remove();
+
+```
+
 ### BottomSheet
 
 ```dart
