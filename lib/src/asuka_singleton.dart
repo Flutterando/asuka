@@ -246,8 +246,8 @@ class __BuildPageState extends State<_BuildPage> implements _ListenerInterface {
       context: context,
       builder: builder,
       barrierDismissible: barrierDismissible,
-      barrierColor: barrierColor,
-      useSafeArea: useSafeArea,
+      //barrierColor: barrierColor,
+      //useSafeArea: useSafeArea,
       useRootNavigator: useRootNavigator,
       routeSettings: routeSettings,
     );

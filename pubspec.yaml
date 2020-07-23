@@ -1,6 +1,6 @@
 name: asuka
 description: Show Snackbars, dialogs, ModalSheets in a single provider. Simple and Clean.
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/Flutterando/asuka
 
 environment:

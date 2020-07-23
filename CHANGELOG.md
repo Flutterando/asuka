@@ -1,3 +1,7 @@
+## [1.0.4] - 22/07/2020.
+
+* Fix bug in Channel Stable
+
 ## [1.0.3] - 28/06/2020.
 
 * Added Overlay
