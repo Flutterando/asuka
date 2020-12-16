@@ -2,7 +2,7 @@ import 'package:flutter/material.dart' as material;
 import 'package:flutter/widgets.dart';
 
 final _keyScaff = GlobalKey<material.ScaffoldState>();
-_ListenerInterface _dialogs;
+_ListenerInterface? _dialogs;
 
 void _checkBuilderIsInMaterialApp() {
   assert(
@@ -21,10 +21,14 @@ void _checkBuilderIsInMaterialApp() {
 /// Otherwise, the entry is inserted on top.
 ///
 /// It is an error to specify both `above` and `below`.
-void addOverlay(OverlayEntry entry, {OverlayEntry below, OverlayEntry above}) {
+void addOverlay(OverlayEntry entry, {OverlayEntry? below, OverlayEntry? above}) {
   _checkBuilderIsInMaterialApp();
-  Overlay.of(_keyScaff.currentContext)
-      .insert(entry, below: below, above: above);
+  if(_keyScaff.currentContext != null){
+
+  OverlayState? overlay = Overlay.of(_keyScaff.currentContext!);
+      overlay?.insert(entry, below: below, above: above);
+  }
+  
 }
 
 /// Insert all the entries in the given iterable.
@@ -35,9 +39,9 @@ void addOverlay(OverlayEntry entry, {OverlayEntry below, OverlayEntry above}) {
 ///
 /// It is an error to specify both `above` and `below`.
 void ainsertAllOverlay(Iterable<OverlayEntry> entries,
-    {OverlayEntry below, OverlayEntry above}) {
+    {OverlayEntry? below, OverlayEntry? above}) {
   _checkBuilderIsInMaterialApp();
-  Overlay.of(_keyScaff.currentContext)
+  Overlay.of(_keyScaff.currentContext!)!
       .insertAll(entries, below: below, above: above);
 }
 
@@ -59,7 +63,7 @@ void ainsertAllOverlay(Iterable<OverlayEntry> entries,
 material.ScaffoldFeatureController<material.SnackBar,
     material.SnackBarClosedReason> showSnackBar(material.SnackBar snackbar) {
   _checkBuilderIsInMaterialApp();
-  return _keyScaff.currentState.showSnackBar(snackbar);
+  return _keyScaff.currentState!.showSnackBar(snackbar);
 }
 
 /// Removes the current [SnackBar] (if any) immediately.
@@ -70,7 +74,7 @@ void removeCurrentSnackBar(
     {material.SnackBarClosedReason reason =
         material.SnackBarClosedReason.remove}) {
   _checkBuilderIsInMaterialApp();
-  return _keyScaff.currentState.removeCurrentSnackBar(reason: reason);
+  return _keyScaff.currentState!.removeCurrentSnackBar(reason: reason);
 }
 
 /// Removes the current [SnackBar] by running its normal exit animation.
@@ -80,7 +84,7 @@ void hideCurrentSnackBar(
     {material.SnackBarClosedReason reason =
         material.SnackBarClosedReason.remove}) {
   _checkBuilderIsInMaterialApp();
-  return _keyScaff.currentState.hideCurrentSnackBar(reason: reason);
+  return _keyScaff.currentState!.hideCurrentSnackBar(reason: reason);
 }
 
 /// Shows a material design bottom sheet in the nearest [Scaffold]. To show
@@ -111,12 +115,12 @@ void hideCurrentSnackBar(
 /// [showModalBottomSheet] function.
 material.PersistentBottomSheetController<T> showBottomSheet<T>(
     Widget Function(BuildContext) builder,
-    {Color backgroundColor,
-    double elevation,
-    ShapeBorder shape,
-    Clip clipBehavior}) {
+    {Color? backgroundColor,
+    double? elevation,
+    ShapeBorder? shape,
+    Clip? clipBehavior}) {
   _checkBuilderIsInMaterialApp();
-  return _keyScaff.currentState.showBottomSheet(
+  return _keyScaff.currentState!.showBottomSheet(
     builder,
     backgroundColor: backgroundColor,
     elevation: elevation,
@@ -178,15 +182,15 @@ material.PersistentBottomSheetController<T> showBottomSheet<T>(
 ///  * [showCupertinoDialog], which displays an iOS-style dialog.
 ///  * [showGeneralDialog], which allows for customization of the dialog popup.
 ///  * <https://material.io/design/components/dialogs.html>
-Future<T> showDialog<T>(
-    {WidgetBuilder builder,
+Future<T?> showDialog<T>(
+    {required WidgetBuilder builder,
     bool barrierDismissible = true,
-    Color barrierColor,
+    Color? barrierColor,
     bool useSafeArea = true,
     bool useRootNavigator = true,
-    RouteSettings routeSettings}) {
+    RouteSettings? routeSettings}) {
   _checkBuilderIsInMaterialApp();
-  return _dialogs.showDialogListener(
+  return _dialogs!.showDialogListener(
     builder: builder,
     barrierDismissible: barrierDismissible,
     barrierColor: barrierColor,
@@ -213,7 +217,7 @@ Widget builder(BuildContext context, Widget child) {
 
 class _BuildPage extends StatefulWidget {
   final Widget child;
-  const _BuildPage({Key key, this.child}) : super(key: key);
+  const _BuildPage({Key? key, required this.child}) : super(key: key);
   @override
   __BuildPageState createState() => __BuildPageState();
 }
@@ -235,13 +239,13 @@ class __BuildPageState extends State<_BuildPage> implements _ListenerInterface {
   }
 
   @override
-  Future<T> showDialogListener<T>(
-      {builder,
+  Future<T?> showDialogListener<T>(
+      {required WidgetBuilder builder,
       bool barrierDismissible = true,
-      material.Color barrierColor,
+      material.Color? barrierColor,
       bool useSafeArea = true,
       bool useRootNavigator = true,
-      material.RouteSettings routeSettings}) {
+      material.RouteSettings? routeSettings}) {
     return material.showDialog(
       context: context,
       builder: builder,
@@ -255,12 +259,12 @@ class __BuildPageState extends State<_BuildPage> implements _ListenerInterface {
 }
 
 abstract class _ListenerInterface {
-  Future<T> showDialogListener<T>({
-    WidgetBuilder builder,
+  Future<T?> showDialogListener<T>({
+    required WidgetBuilder builder,
     bool barrierDismissible = true,
-    Color barrierColor,
+    Color? barrierColor,
     bool useSafeArea = true,
     bool useRootNavigator = true,
-    RouteSettings routeSettings,
+    RouteSettings? routeSettings,
   });
 }
