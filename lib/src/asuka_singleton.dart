@@ -204,7 +204,7 @@ Future<T?> showDialog<T>(
 ///         builder: asuka.builder,
 ///         ...
 
-Widget builder(BuildContext context, Widget child) {
+Widget builder(BuildContext context, Widget? child) {
   return Navigator(
     initialRoute: '/',
     onGenerateRoute: (_) => material.MaterialPageRoute(
@@ -216,8 +216,8 @@ Widget builder(BuildContext context, Widget child) {
 }
 
 class _BuildPage extends StatefulWidget {
-  final Widget child;
-  const _BuildPage({Key? key, required this.child}) : super(key: key);
+  final Widget? child;
+  const _BuildPage({Key? key, this.child}) : super(key: key);
   @override
   __BuildPageState createState() => __BuildPageState();
 }
