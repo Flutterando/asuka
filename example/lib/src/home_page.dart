@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:asuka/asuka.dart';
 import 'home.controller.dart';
+import 'second/second_page.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -28,7 +30,12 @@ class _HomePageState extends State<HomePage> {
           RaisedButton(
             child: Text('Second Page'),
             onPressed: () {
-              Navigator.pushNamed(context, '/second');
+              //Navigator.pushNamed(context, '/second');
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SecondPage(),
+                  ));
             },
           ),
           SizedBox(height: 10),
@@ -48,6 +55,49 @@ class _HomePageState extends State<HomePage> {
             child: Text('ModalSheet'),
             onPressed: homeController.onClickModalSheet,
           ),
+          RaisedButton(
+            child: Text('SnackBar Warning'),
+            onPressed: () {
+              AsukaSnackbar.warning("Warning").show();
+            },
+          ),
+          RaisedButton(
+            child: Text('SnackBar Success'),
+            onPressed: () {
+              AsukaSnackbar.success("Success").show();
+            },
+          ),
+          RaisedButton(
+            child: Text('SnackBar alert'),
+            onPressed: () {
+              AsukaSnackbar.alert("alert").show();
+            },
+          ),
+          RaisedButton(
+            child: Text('SnackBar info'),
+            onPressed: () {
+              AsukaSnackbar.info("info").show();
+            },
+          ),
+          RaisedButton(
+            child: Text('SnackBar message'),
+            onPressed: () {
+              AsukaSnackbar.message("message").show();
+            },
+          ),
+          Row(
+            children: [
+              Hero(
+                tag: "HeroTag",
+                child: Container(
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: Colors.red),
+                  width: 50,
+                  height: 50,
+                ),
+              ),
+            ],
+          ),
+          TextField()
         ],
       ),
     );

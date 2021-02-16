@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart' as material;
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 final _keyScaff = GlobalKey<material.ScaffoldState>();
 _ListenerInterface? _dialogs;
 
 void _checkBuilderIsInMaterialApp() {
-  assert(
-      _keyScaff.currentState != null, """Add asuka.builder in your MaterialApp;
+  assert(_keyScaff.currentState != null, """Add asuka.builder in your MaterialApp;
 
        return MaterialApp(
          builder: asuka.builder,
@@ -23,12 +23,10 @@ void _checkBuilderIsInMaterialApp() {
 /// It is an error to specify both `above` and `below`.
 void addOverlay(OverlayEntry entry, {OverlayEntry? below, OverlayEntry? above}) {
   _checkBuilderIsInMaterialApp();
-  if(_keyScaff.currentContext != null){
-
-  OverlayState? overlay = Overlay.of(_keyScaff.currentContext!);
-      overlay?.insert(entry, below: below, above: above);
+  if (_keyScaff.currentContext != null) {
+    OverlayState? overlay = Overlay.of(_keyScaff.currentContext!);
+    overlay?.insert(entry, below: below, above: above);
   }
-  
 }
 
 /// Insert all the entries in the given iterable.
@@ -38,11 +36,9 @@ void addOverlay(OverlayEntry entry, {OverlayEntry? below, OverlayEntry? above}) 
 /// Otherwise, the entries are inserted on top.
 ///
 /// It is an error to specify both `above` and `below`.
-void ainsertAllOverlay(Iterable<OverlayEntry> entries,
-    {OverlayEntry? below, OverlayEntry? above}) {
+void ainsertAllOverlay(Iterable<OverlayEntry> entries, {OverlayEntry? below, OverlayEntry? above}) {
   _checkBuilderIsInMaterialApp();
-  Overlay.of(_keyScaff.currentContext!)!
-      .insertAll(entries, below: below, above: above);
+  Overlay.of(_keyScaff.currentContext!)!.insertAll(entries, below: below, above: above);
 }
 
 /// Shows a [SnackBar] at the bottom of the scaffold.
@@ -60,31 +56,27 @@ void ainsertAllOverlay(Iterable<OverlayEntry> entries,
 /// animation), use [removeCurrentSnackBar].
 ///
 /// See [Scaffold.of] for information about how to obtain the [ScaffoldState].
-material.ScaffoldFeatureController<material.SnackBar,
-    material.SnackBarClosedReason> showSnackBar(material.SnackBar snackbar) {
+material.ScaffoldFeatureController<material.SnackBar, material.SnackBarClosedReason> showSnackBar(material.SnackBar snackbar) {
   _checkBuilderIsInMaterialApp();
-  return _keyScaff.currentState!.showSnackBar(snackbar);
+  return ScaffoldMessenger.of(_keyScaff.currentState!.context).showSnackBar(snackbar);
 }
 
 /// Removes the current [SnackBar] (if any) immediately.
 ///
 /// The removed snack bar does not run its normal exit animation. If there are
 /// any queued snack bars, they begin their entrance animation immediately.
-void removeCurrentSnackBar(
-    {material.SnackBarClosedReason reason =
-        material.SnackBarClosedReason.remove}) {
+void removeCurrentSnackBar({material.SnackBarClosedReason reason = material.SnackBarClosedReason.remove}) {
   _checkBuilderIsInMaterialApp();
-  return _keyScaff.currentState!.removeCurrentSnackBar(reason: reason);
+  return ScaffoldMessenger.of(_keyScaff.currentState!.context).removeCurrentSnackBar(reason: reason);
 }
 
 /// Removes the current [SnackBar] by running its normal exit animation.
 ///
 /// The closed completer is called after the animation is complete.
-void hideCurrentSnackBar(
-    {material.SnackBarClosedReason reason =
-        material.SnackBarClosedReason.remove}) {
+void hideCurrentSnackBar({material.SnackBarClosedReason reason = material.SnackBarClosedReason.remove}) {
   _checkBuilderIsInMaterialApp();
-  return _keyScaff.currentState!.hideCurrentSnackBar(reason: reason);
+  //return _keyScaff.currentState!.hideCurrentSnackBar(reason: reason);
+  return ScaffoldMessenger.of(_keyScaff.currentState!.context).hideCurrentSnackBar(reason: reason);
 }
 
 /// Shows a material design bottom sheet in the nearest [Scaffold]. To show
@@ -113,12 +105,7 @@ void hideCurrentSnackBar(
 /// to a menu or a dialog and prevents the user from interacting with the rest
 /// of the app. Modal bottom sheets can be created and displayed with the
 /// [showModalBottomSheet] function.
-material.PersistentBottomSheetController<T> showBottomSheet<T>(
-    Widget Function(BuildContext) builder,
-    {Color? backgroundColor,
-    double? elevation,
-    ShapeBorder? shape,
-    Clip? clipBehavior}) {
+material.PersistentBottomSheetController<T> showBottomSheet<T>(Widget Function(BuildContext) builder, {Color? backgroundColor, double? elevation, ShapeBorder? shape, Clip? clipBehavior}) {
   _checkBuilderIsInMaterialApp();
   return _keyScaff.currentState!.showBottomSheet(
     builder,
@@ -182,13 +169,7 @@ material.PersistentBottomSheetController<T> showBottomSheet<T>(
 ///  * [showCupertinoDialog], which displays an iOS-style dialog.
 ///  * [showGeneralDialog], which allows for customization of the dialog popup.
 ///  * <https://material.io/design/components/dialogs.html>
-Future<T?> showDialog<T>(
-    {required WidgetBuilder builder,
-    bool barrierDismissible = true,
-    Color? barrierColor,
-    bool useSafeArea = true,
-    bool useRootNavigator = true,
-    RouteSettings? routeSettings}) {
+Future<T?> showDialog<T>({required WidgetBuilder builder, bool barrierDismissible = true, Color? barrierColor, bool useSafeArea = true, bool useRootNavigator = true, RouteSettings? routeSettings}) {
   _checkBuilderIsInMaterialApp();
   return _dialogs!.showDialogListener(
     builder: builder,
@@ -207,13 +188,16 @@ Future<T?> showDialog<T>(
 Widget builder(BuildContext context, Widget? child) {
   return Navigator(
     initialRoute: '/',
+    observers: [
+      asukaHeroController
+    ],
     onGenerateRoute: (_) => material.MaterialPageRoute(
-      builder: (context) => _BuildPage(
-        child: child,
-      ),
+      builder: (context) => _BuildPage(child: child),
     ),
   );
 }
+
+material.HeroController get asukaHeroController => HeroController(createRectTween: (begin, end) => MaterialRectCenterArcTween(begin: begin, end: end));
 
 class _BuildPage extends StatefulWidget {
   final Widget? child;
@@ -239,13 +223,7 @@ class __BuildPageState extends State<_BuildPage> implements _ListenerInterface {
   }
 
   @override
-  Future<T?> showDialogListener<T>(
-      {required WidgetBuilder builder,
-      bool barrierDismissible = true,
-      material.Color? barrierColor,
-      bool useSafeArea = true,
-      bool useRootNavigator = true,
-      material.RouteSettings? routeSettings}) {
+  Future<T?> showDialogListener<T>({required WidgetBuilder builder, bool barrierDismissible = true, material.Color? barrierColor, bool useSafeArea = true, bool useRootNavigator = true, material.RouteSettings? routeSettings}) {
     return material.showDialog(
       context: context,
       builder: builder,
