@@ -18,6 +18,9 @@ import 'package:asuka/asuka.dart' as asuka;
 
 MaterialApp(
     builder: asuka.builder,
+    navigatorObservers: [
+       asuka.asukaHeroController //if u don`t add this Hero will not work
+    ],
 );
 
 ```
@@ -36,6 +39,16 @@ asuka.showSnackBar(SnackBar(
     content: Text("Hello World"),
 ));
 
+//some sugar code
+AsukaSnackbar.warning("Warning").show();
+
+AsukaSnackbar.success("success").show();
+
+AsukaSnackbar.alert("alert").show();
+
+AsukaSnackbar.info("info").show();
+
+AsukaSnackbar.message("message").show();
 
 ```
 

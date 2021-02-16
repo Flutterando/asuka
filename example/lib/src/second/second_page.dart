@@ -22,6 +22,13 @@ class _SecondPageState extends State<SecondPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              Hero(
+                tag: "HeroTag",
+                child: Container(
+                  height: 100,
+                  color: Colors.red,
+                ),
+              ),
               TextField(),
               RaisedButton(
                   child: Text('Back to Home'),
@@ -73,7 +80,6 @@ class _SecondPageState extends State<SecondPage> {
                   onPressed: () {
                     Navigator.pop(context);
                   }),
-              
             ],
           ),
         ));
