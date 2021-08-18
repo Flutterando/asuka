@@ -12,13 +12,13 @@ class HomeController {
         title: Text('My Dialog'),
         content: Text('This is Dialog Content'),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
             child: Text('Cancel'),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
@@ -29,7 +29,7 @@ class HomeController {
     );
   }
 
-  void onClickModalSheet() {
+  void onClickBottomSheet() {
     asuka.showBottomSheet((context) {
       return Material(
         elevation: 7,
@@ -52,5 +52,35 @@ class HomeController {
         ),
       );
     });
+  }
+
+  void onClickModalBottomSheet() {
+    asuka.showModalBottomSheet(
+      builder: (context) => Material(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(16),
+          topRight: Radius.circular(16),
+        ),
+        elevation: 7,
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height / 2,
+          child: ListView(
+            children: [
+              ListTile(
+                title: Text('Option 1'),
+              ),
+              ListTile(
+                title: Text('Option 2'),
+              ),
+              ListTile(
+                title: Text('Cancel'),
+                onTap: () => Navigator.pop(context),
+              ),
+            ],
+          ),
+        ),
+      ),
+      backgroundColor: Colors.transparent,
+    );
   }
 }

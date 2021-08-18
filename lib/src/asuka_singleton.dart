@@ -7,8 +7,7 @@ _ListenerInterface? _dialogs;
 Function? _callback;
 
 void _checkBuilderIsInMaterialApp() {
-  assert(
-      _keyScaff.currentState != null, """Add asuka.builder in your MaterialApp;
+  assert(_keyScaff.currentState != null, """Add asuka.builder in your MaterialApp;
 
        return MaterialApp(
          builder: asuka.builder,
@@ -17,8 +16,7 @@ void _checkBuilderIsInMaterialApp() {
 }
 
 void _checkAndInvokeCallback() {
-  assert(_callback != null,
-      "Provide a callback function in the app main file for invoking it.");
+  assert(_callback != null, "Provide a callback function in the app main file for invoking it.");
 
   _callback!();
 }
@@ -30,8 +28,7 @@ void _checkAndInvokeCallback() {
 /// Otherwise, the entry is inserted on top.
 ///
 /// It is an error to specify both `above` and `below`.
-void addOverlay(OverlayEntry entry,
-    {OverlayEntry? below, OverlayEntry? above, bool callback = false}) {
+void addOverlay(OverlayEntry entry, {OverlayEntry? below, OverlayEntry? above, bool callback = false}) {
   _checkBuilderIsInMaterialApp();
   if (callback) _checkAndInvokeCallback();
   if (_keyScaff.currentContext != null) {
@@ -47,12 +44,10 @@ void addOverlay(OverlayEntry entry,
 /// Otherwise, the entries are inserted on top.
 ///
 /// It is an error to specify both `above` and `below`.
-void ainsertAllOverlay(Iterable<OverlayEntry> entries,
-    {OverlayEntry? below, OverlayEntry? above, bool callback = false}) {
+void ainsertAllOverlay(Iterable<OverlayEntry> entries, {OverlayEntry? below, OverlayEntry? above, bool callback = false}) {
   _checkBuilderIsInMaterialApp();
   if (callback) _checkAndInvokeCallback();
-  Overlay.of(_keyScaff.currentContext!)!
-      .insertAll(entries, below: below, above: above);
+  Overlay.of(_keyScaff.currentContext!)!.insertAll(entries, below: below, above: above);
 }
 
 /// Shows a [SnackBar] at the bottom of the scaffold.
@@ -70,41 +65,31 @@ void ainsertAllOverlay(Iterable<OverlayEntry> entries,
 /// animation), use [removeCurrentSnackBar].
 ///
 /// See [Scaffold.of] for information about how to obtain the [ScaffoldState].
-material.ScaffoldFeatureController<material.SnackBar,
-        material.SnackBarClosedReason>
-    showSnackBar(material.SnackBar snackbar, {bool callback = false}) {
+material.ScaffoldFeatureController<material.SnackBar, material.SnackBarClosedReason> showSnackBar(material.SnackBar snackbar,
+    {bool callback = false}) {
   _checkBuilderIsInMaterialApp();
   if (callback) _checkAndInvokeCallback();
-  return ScaffoldMessenger.of(_keyScaff.currentState!.context)
-      .showSnackBar(snackbar);
+  return ScaffoldMessenger.of(_keyScaff.currentState!.context).showSnackBar(snackbar);
 }
 
 /// Removes the current [SnackBar] (if any) immediately.
 ///
 /// The removed snack bar does not run its normal exit animation. If there are
 /// any queued snack bars, they begin their entrance animation immediately.
-void removeCurrentSnackBar(
-    {material.SnackBarClosedReason reason =
-        material.SnackBarClosedReason.remove,
-    bool callback = false}) {
+void removeCurrentSnackBar({material.SnackBarClosedReason reason = material.SnackBarClosedReason.remove, bool callback = false}) {
   _checkBuilderIsInMaterialApp();
   if (callback) _checkAndInvokeCallback();
-  return ScaffoldMessenger.of(_keyScaff.currentState!.context)
-      .removeCurrentSnackBar(reason: reason);
+  return ScaffoldMessenger.of(_keyScaff.currentState!.context).removeCurrentSnackBar(reason: reason);
 }
 
 /// Removes the current [SnackBar] by running its normal exit animation.
 ///
 /// The closed completer is called after the animation is complete.
-void hideCurrentSnackBar(
-    {material.SnackBarClosedReason reason =
-        material.SnackBarClosedReason.remove,
-    bool callback = false}) {
+void hideCurrentSnackBar({material.SnackBarClosedReason reason = material.SnackBarClosedReason.remove, bool callback = false}) {
   _checkBuilderIsInMaterialApp();
   if (callback) _checkAndInvokeCallback();
   //return _keyScaff.currentState!.hideCurrentSnackBar(reason: reason);
-  return ScaffoldMessenger.of(_keyScaff.currentState!.context)
-      .hideCurrentSnackBar(reason: reason);
+  return ScaffoldMessenger.of(_keyScaff.currentState!.context).hideCurrentSnackBar(reason: reason);
 }
 
 /// Shows a material design bottom sheet in the nearest [Scaffold]. To show
@@ -133,13 +118,8 @@ void hideCurrentSnackBar(
 /// to a menu or a dialog and prevents the user from interacting with the rest
 /// of the app. Modal bottom sheets can be created and displayed with the
 /// [showModalBottomSheet] function.
-material.PersistentBottomSheetController<T> showBottomSheet<T>(
-    Widget Function(BuildContext) builder,
-    {Color? backgroundColor,
-    double? elevation,
-    ShapeBorder? shape,
-    Clip? clipBehavior,
-    bool callback = false}) {
+material.PersistentBottomSheetController<T> showBottomSheet<T>(Widget Function(BuildContext) builder,
+    {Color? backgroundColor, double? elevation, ShapeBorder? shape, Clip? clipBehavior, bool callback = false}) {
   _checkBuilderIsInMaterialApp();
   if (callback) _checkAndInvokeCallback();
   return _keyScaff.currentState!.showBottomSheet(
@@ -148,6 +128,83 @@ material.PersistentBottomSheetController<T> showBottomSheet<T>(
     elevation: elevation,
     shape: shape,
     clipBehavior: clipBehavior,
+  );
+}
+
+/// Shows a modal material design bottom sheet.
+///
+/// A modal bottom sheet is an alternative to a menu or a dialog and prevents
+/// the user from interacting with the rest of the app.
+///
+/// A closely related widget is a persistent bottom sheet, which shows
+/// information that supplements the primary content of the app without
+/// preventing the use from interacting with the app. Persistent bottom sheets
+/// can be created and displayed with the [showBottomSheet] function or the
+/// [ScaffoldState.showBottomSheet] method.
+///
+/// The `context` argument is used to look up the [Navigator] and [Theme] for
+/// the bottom sheet. It is only used when the method is called. Its
+/// corresponding widget can be safely removed from the tree before the bottom
+/// sheet is closed.
+///
+/// The `isScrollControlled` parameter specifies whether this is a route for
+/// a bottom sheet that will utilize [DraggableScrollableSheet]. If you wish
+/// to have a bottom sheet that has a scrollable child such as a [ListView] or
+/// a [GridView] and have the bottom sheet be draggable, you should set this
+/// parameter to true.
+///
+/// The `useRootNavigator` parameter ensures that the root navigator is used to
+/// display the [BottomSheet] when set to `true`. This is useful in the case
+/// that a modal [BottomSheet] needs to be displayed above all other content
+/// but the caller is inside another [Navigator].
+///
+/// The [isDismissible] parameter specifies whether the bottom sheet will be
+/// dismissed when user taps on the scrim.
+///
+/// The [enableDrag] parameter specifies whether the bottom sheet can be
+/// dragged up and down and dismissed by swiping downwards.
+///
+/// The optional [backgroundColor], [elevation], [shape], [clipBehavior] and [transitionAnimationController]
+/// parameters can be passed in to customize the appearance and behavior of
+/// modal bottom sheets.
+///
+/// The [transitionAnimationController] controls the bottom sheet's entrance and
+/// exit animations if provided.
+///
+/// The optional `routeSettings` parameter sets the [RouteSettings] of the modal bottom sheet
+/// sheet. This is particularly useful in the case that a user wants to observe
+/// [PopupRoute]s within a [NavigatorObserver].
+///
+/// Returns a `Future` that resolves to the value (if any) that was passed to
+/// [Navigator.pop] when the modal bottom sheet was closed.
+Future<T?> showModalBottomSheet<T>({
+  required WidgetBuilder builder,
+  Color? backgroundColor,
+  double? elevation,
+  ShapeBorder? shape,
+  Clip? clipBehavior,
+  Color? barrierColor,
+  bool enableDrag = true,
+  bool isDismissible = true,
+  bool isScrollControlled = false,
+  bool useRootNavigator = false,
+  RouteSettings? routeSettings,
+  AnimationController? transitionAnimationController,
+}) {
+  return material.showModalBottomSheet<T>(
+    context: _keyScaff.currentState!.context,
+    builder: builder,
+    backgroundColor: backgroundColor,
+    elevation: elevation,
+    shape: shape,
+    clipBehavior: clipBehavior,
+    barrierColor: barrierColor,
+    enableDrag: enableDrag,
+    isDismissible: isDismissible,
+    isScrollControlled: isScrollControlled,
+    useRootNavigator: useRootNavigator,
+    routeSettings: routeSettings,
+    transitionAnimationController: transitionAnimationController,
   );
 }
 
@@ -238,9 +295,8 @@ Widget builder(BuildContext context, Widget? child) {
   );
 }
 
-material.HeroController get asukaHeroController => HeroController(
-    createRectTween: (begin, end) =>
-        MaterialRectCenterArcTween(begin: begin, end: end));
+material.HeroController get asukaHeroController =>
+    HeroController(createRectTween: (begin, end) => MaterialRectCenterArcTween(begin: begin, end: end));
 
 class _BuildPage extends StatefulWidget {
   final Widget? child;
