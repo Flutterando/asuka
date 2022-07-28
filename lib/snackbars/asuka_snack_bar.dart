@@ -1,6 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 
 class AsukaSnackbar extends SnackBar {
   AsukaSnackbar._(
@@ -47,15 +46,24 @@ class AsukaSnackbar extends SnackBar {
           ),
         );
 
-  factory AsukaSnackbar.warning(String content, {Key? key}) => AsukaSnackbar._(key, content, Color(0xFFE6CA72), icon: Icons.warning);
+  factory AsukaSnackbar.warning(String content, {Key? key}) =>
+      AsukaSnackbar._(key, content, Color(0xFFE6CA72), icon: Icons.warning);
 
-  factory AsukaSnackbar.alert(String content, {Key? key}) => AsukaSnackbar._(key, content, Color(0xffFA5456), icon: Icons.report);
+  factory AsukaSnackbar.alert(String content, {Key? key}) =>
+      AsukaSnackbar._(key, content, Color(0xffFA5456), icon: Icons.report);
 
-  factory AsukaSnackbar.info(String content, {Key? key, SnackBarAction? snackBarAction}) => AsukaSnackbar._(key, content, Color(0xff3196DA), action: snackBarAction, icon: Icons.help);
+  factory AsukaSnackbar.info(String content,
+          {Key? key, SnackBarAction? snackBarAction}) =>
+      AsukaSnackbar._(key, content, Color(0xff3196DA),
+          action: snackBarAction, icon: Icons.help);
 
-  factory AsukaSnackbar.success(String content, {Key? key, SnackBarAction? snackBarAction}) => AsukaSnackbar._(key, content, Color(0xFF80AD49), action: snackBarAction, icon: Icons.check_circle);
+  factory AsukaSnackbar.success(String content,
+          {Key? key, SnackBarAction? snackBarAction}) =>
+      AsukaSnackbar._(key, content, Color(0xFF80AD49),
+          action: snackBarAction, icon: Icons.check_circle);
 
-  factory AsukaSnackbar.message(String content, {Key? key}) => AsukaSnackbar._(key, content, Color(0xff484848));
+  factory AsukaSnackbar.message(String content, {Key? key}) =>
+      AsukaSnackbar._(key, content, Color(0xff484848));
 
   void call() => show();
 
