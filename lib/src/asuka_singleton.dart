@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 final _keyScaff = GlobalKey<material.ScaffoldState>();
 _ListenerInterface? _dialogs;
 Function? _callback;
-final asuka = Asuka._();
+const asuka = Asuka._();
 
 class Asuka {
-  Asuka._();
+  const Asuka._();
   static void _checkBuilderIsInMaterialApp() {
     assert(_keyScaff.currentState != null,
         """Add asuka.builder in your MaterialApp;
