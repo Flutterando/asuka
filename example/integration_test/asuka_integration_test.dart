@@ -1,4 +1,5 @@
 import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/snackbars/asuka_snack_bar.dart';
 import 'package:example/src/home.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -14,21 +15,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        MaterialApp(
-          builder: asuka.builder,
-          home: Scaffold(
-            body: Builder(
-              builder: (context) {
-                return ElevatedButton(
-                  onPressed: () {
-                    asuka.AsukaSnackbar.warning('test').show();
-                  },
-                  child: const Text('Warning'),
-                );
-              },
-            ),
-          ),
-        ),
+        showSnackbar(asuka.AsukaSnackbar.warning('test'), 'Warning'),
       );
 
       // Create the Finders.
@@ -44,21 +31,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        MaterialApp(
-          builder: asuka.builder,
-          home: Scaffold(
-            body: Builder(
-              builder: (context) {
-                return ElevatedButton(
-                  onPressed: () {
-                    asuka.AsukaSnackbar.success('test').show();
-                  },
-                  child: const Text('Success'),
-                );
-              },
-            ),
-          ),
-        ),
+        showSnackbar(asuka.AsukaSnackbar.success('test'), 'Success'),
       );
 
       // Create the Finders.
@@ -74,21 +47,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        MaterialApp(
-          builder: asuka.builder,
-          home: Scaffold(
-            body: Builder(
-              builder: (context) {
-                return ElevatedButton(
-                  onPressed: () {
-                    asuka.AsukaSnackbar.success('test').show();
-                  },
-                  child: const Text('Alert'),
-                );
-              },
-            ),
-          ),
-        ),
+        showSnackbar(asuka.AsukaSnackbar.success('test'), 'Alert'),
       );
 
       // Create the Finders.
@@ -104,21 +63,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        MaterialApp(
-          builder: asuka.builder,
-          home: Scaffold(
-            body: Builder(
-              builder: (context) {
-                return ElevatedButton(
-                  onPressed: () {
-                    asuka.AsukaSnackbar.info('test').show();
-                  },
-                  child: const Text('Info'),
-                );
-              },
-            ),
-          ),
-        ),
+        showSnackbar(asuka.AsukaSnackbar.info('test'), 'Info'),
       );
 
       // Create the Finders.
@@ -134,22 +79,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        MaterialApp(
-          builder: asuka.builder,
-          home: Scaffold(
-            body: Builder(
-              builder: (context) {
-                return ElevatedButton(
-                  onPressed: () {
-                    asuka.AsukaSnackbar.message('test').show();
-                  },
-                  child: const Text('Message'),
-                );
-              },
-            ),
-          ),
-        ),
-      );
+          showSnackbar(asuka.AsukaSnackbar.message('test'), 'Message'));
 
       // Create the Finders.
       final btnFinder = find.text('Message');
@@ -168,18 +98,22 @@ void main() {
         MaterialApp(
           builder: asuka.builder,
           home: Scaffold(
+            backgroundColor: Color.fromARGB(255, 230, 227, 227),
             body: Builder(
               builder: (context) {
-                return ElevatedButton(
-                  onPressed: () {
-                    controller.onClickSnackbar;
-                    asuka.showSnackBar(
-                      const SnackBar(
-                        content: Text('New Snackbar'),
-                      ),
-                    );
-                  },
-                  child: const Text('Custom SnackBar'),
+                return Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+                    onPressed: () {
+                      controller.onClickSnackbar;
+                      asuka.showSnackBar(
+                        const SnackBar(
+                          content: Text('New Snackbar'),
+                        ),
+                      );
+                    },
+                    child: const Text('Custom SnackBar'),
+                  ),
                 );
               },
             ),
@@ -204,27 +138,31 @@ void main() {
         MaterialApp(
           builder: asuka.builder,
           home: Scaffold(
+            backgroundColor: Color.fromARGB(255, 230, 227, 227),
             body: Builder(
               builder: (context) {
-                return ElevatedButton(
-                  onPressed: () {
-                    controller.onClickDialog;
-                    asuka.showDialog(
-                      builder: (context) => AlertDialog(
-                        title: const Text('Dialog'),
-                        content: const Text('This is a custom Dialog '),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Cancel'),
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                  child: const Text('Custom Dialog'),
+                return Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+                    onPressed: () {
+                      controller.onClickDialog;
+                      asuka.showDialog(
+                        builder: (context) => AlertDialog(
+                          title: const Text('Dialog'),
+                          content: const Text('This is a custom Dialog '),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('Cancel'),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                    child: const Text('Custom Dialog'),
+                  ),
                 );
               },
             ),
@@ -249,40 +187,44 @@ void main() {
         MaterialApp(
           builder: asuka.builder,
           home: Scaffold(
+            backgroundColor: Color.fromARGB(255, 230, 227, 227),
             body: Builder(
               builder: (context) {
-                return ElevatedButton(
-                  onPressed: () {
-                    controller.onClickBottomSheet;
-                    asuka.showBottomSheet(
-                      (context) {
-                        return Material(
-                          elevation: 7,
-                          child: SizedBox(
-                            height: MediaQuery.of(context).size.height / 2,
-                            child: ListView(
-                              children: [
-                                const ListTile(
-                                  title: Text('1'),
-                                ),
-                                const ListTile(
-                                  title: Text('2'),
-                                ),
-                                const ListTile(
-                                  title: Text('3'),
-                                ),
-                                ListTile(
-                                  title: const Text('Cancel'),
-                                  onTap: () => Navigator.pop(context),
-                                ),
-                              ],
+                return Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+                    onPressed: () {
+                      controller.onClickBottomSheet;
+                      asuka.showBottomSheet(
+                        (context) {
+                          return Material(
+                            elevation: 7,
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height / 2,
+                              child: ListView(
+                                children: [
+                                  const ListTile(
+                                    title: Text('1'),
+                                  ),
+                                  const ListTile(
+                                    title: Text('2'),
+                                  ),
+                                  const ListTile(
+                                    title: Text('3'),
+                                  ),
+                                  ListTile(
+                                    title: const Text('Cancel'),
+                                    onTap: () => Navigator.pop(context),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  child: const Text('Custom BottomSheet'),
+                          );
+                        },
+                      );
+                    },
+                    child: const Text('Custom BottomSheet'),
+                  ),
                 );
               },
             ),
@@ -307,43 +249,47 @@ void main() {
         MaterialApp(
           builder: asuka.builder,
           home: Scaffold(
+            backgroundColor: Color.fromARGB(255, 230, 227, 227),
             body: Builder(
               builder: (context) {
-                return ElevatedButton(
-                  onPressed: () {
-                    controller.onClickModalBottomSheet;
-                    asuka.showModalBottomSheet(
-                      builder: (context) => Material(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(16),
-                          topRight: Radius.circular(16),
-                        ),
-                        elevation: 7,
-                        child: SizedBox(
-                          height: MediaQuery.of(context).size.height / 2,
-                          child: ListView(
-                            children: [
-                              const ListTile(
-                                title: Text('Modal 1'),
-                              ),
-                              const ListTile(
-                                title: Text('Modal 2'),
-                              ),
-                              const ListTile(
-                                title: Text('Modal 3'),
-                              ),
-                              ListTile(
-                                title: const Text('Cancel'),
-                                onTap: () => Navigator.pop(context),
-                              ),
-                            ],
+                return Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+                    onPressed: () {
+                      controller.onClickModalBottomSheet;
+                      asuka.showModalBottomSheet(
+                        builder: (context) => Material(
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(16),
+                            topRight: Radius.circular(16),
+                          ),
+                          elevation: 7,
+                          child: SizedBox(
+                            height: MediaQuery.of(context).size.height / 2,
+                            child: ListView(
+                              children: [
+                                const ListTile(
+                                  title: Text('Modal 1'),
+                                ),
+                                const ListTile(
+                                  title: Text('Modal 2'),
+                                ),
+                                const ListTile(
+                                  title: Text('Modal 3'),
+                                ),
+                                ListTile(
+                                  title: const Text('Cancel'),
+                                  onTap: () => Navigator.pop(context),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      backgroundColor: Colors.transparent,
-                    );
-                  },
-                  child: const Text('Custom showModalBottomSheet'),
+                        backgroundColor: Colors.transparent,
+                      );
+                    },
+                    child: const Text('Custom showModalBottomSheet'),
+                  ),
                 );
               },
             ),
@@ -358,5 +304,27 @@ void main() {
       await tester.pumpAndSettle();
       expect(textFinder, findsOneWidget);
     },
+  );
+}
+
+MaterialApp showSnackbar(AsukaSnackbar asukaSnackbar, String buttonText) {
+  return MaterialApp(
+    builder: asuka.builder,
+    home: Scaffold(
+      backgroundColor: Color.fromARGB(255, 230, 227, 227),
+      body: Builder(
+        builder: (context) {
+          return Center(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+              onPressed: () {
+                asukaSnackbar.show();
+              },
+              child: Text(buttonText),
+            ),
+          );
+        },
+      ),
+    ),
   );
 }
