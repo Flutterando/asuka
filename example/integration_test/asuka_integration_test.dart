@@ -47,7 +47,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        showSnackbar(asuka.AsukaSnackbar.success('test'), 'Alert'),
+        showSnackbar(asuka.AsukaSnackbar.alert('test'), 'Alert'),
       );
 
       // Create the Finders.
