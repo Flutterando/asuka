@@ -1,6 +1,6 @@
 import 'package:example/src/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 
 import 'src/second/second_page.dart';
 
@@ -17,11 +17,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      builder: asuka.builder,
+      builder: Asuka.builder,
       initialRoute: '/',
-      navigatorObservers: [
-        asuka.asukaHeroController
-      ],
+      navigatorObservers: [Asuka.asukaHeroController],
       routes: {
         '/': (_) => HomePage(title: 'Asuka'),
         '/second': (_) => SecondPage(title: 'Second page'),

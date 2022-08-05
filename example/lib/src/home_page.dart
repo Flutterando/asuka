@@ -1,6 +1,5 @@
+import 'package:asuka/snackbars/asuka_snack_bar.dart';
 import 'package:flutter/material.dart';
-
-import 'package:asuka/asuka.dart';
 import 'home.controller.dart';
 import 'second/second_page.dart';
 
@@ -31,10 +30,11 @@ class _HomePageState extends State<HomePage> {
             child: Text('Second Page'),
             onPressed: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SecondPage(),
-                  ));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SecondPage(),
+                ),
+              );
             },
           ),
           SizedBox(height: 10),
@@ -89,7 +89,9 @@ class _HomePageState extends State<HomePage> {
               Hero(
                 tag: "HeroTag",
                 child: Container(
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: Colors.red),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: Colors.red),
                   width: 50,
                   height: 50,
                 ),
