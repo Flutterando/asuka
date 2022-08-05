@@ -1,4 +1,4 @@
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 
 ///Defines the layout and behavior of a [AsukaSnackbar].
@@ -68,7 +68,7 @@ class AsukaSnackbar extends SnackBar {
               if (action == null)
                 InkWell(
                   child: Icon(Icons.close, color: Colors.white),
-                  onTap: asuka.hideCurrentSnackBar, //
+                  onTap: Asuka.hideCurrentSnackBar, //
                 )
             ],
           ),
@@ -111,5 +111,5 @@ class AsukaSnackbar extends SnackBar {
 
   void call() => show();
 
-  void show() => asuka.showSnackBar(this);
+  void show() => Asuka.showSnackBar(this);
 }
