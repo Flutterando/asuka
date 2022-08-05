@@ -27,10 +27,9 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         padding: EdgeInsets.all(20),
         children: [
-          RaisedButton(
+          ElevatedButton(
             child: Text('Second Page'),
             onPressed: () {
-              //Navigator.pushNamed(context, '/second');
               Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -41,45 +40,45 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 10),
           Divider(),
           SizedBox(height: 10),
-          RaisedButton(
+          ElevatedButton(
             child: Text('SnackBar'),
             onPressed: homeController.onClickSnackbar,
           ),
           SizedBox(height: 10),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Dialog'),
             onPressed: homeController.onClickDialog,
           ),
           SizedBox(height: 10),
-          RaisedButton(
+          ElevatedButton(
             child: Text('ModalSheet'),
-            onPressed: homeController.onClickModalSheet,
+            onPressed: () => homeController.onClickBottomSheet(),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('SnackBar Warning'),
             onPressed: () {
               AsukaSnackbar.warning("Warning").show();
             },
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('SnackBar Success'),
             onPressed: () {
               AsukaSnackbar.success("Success").show();
             },
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('SnackBar alert'),
             onPressed: () {
               AsukaSnackbar.alert("alert").show();
             },
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('SnackBar info'),
             onPressed: () {
               AsukaSnackbar.info("info").show();
             },
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('SnackBar message'),
             onPressed: () {
               AsukaSnackbar.message("message").show();
@@ -97,7 +96,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          TextField()
+          TextField(),
+          ElevatedButton(
+            child: Text('Show Modal Bottom Sheet'),
+            onPressed: () {
+              homeController.onClickModalBottomSheet();
+            },
+          ),
         ],
       ),
     );
