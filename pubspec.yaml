@@ -6,6 +6,10 @@ homepage: https://github.com/Flutterando/asuka
 environment:
   sdk: ">=2.12.0-0 <3.0.0"
   flutter: ">=2.3.0 <4.0.0"
+
+dependencies:    
+  flutter:
+    sdk:  flutter
   
     
 dev_dependencies:

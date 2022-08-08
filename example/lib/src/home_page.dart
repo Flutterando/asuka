@@ -1,5 +1,6 @@
 import 'package:asuka/snackbars/asuka_snack_bar.dart';
 import 'package:flutter/material.dart';
+
 import 'home.controller.dart';
 import 'second/second_page.dart';
 
@@ -9,7 +10,7 @@ class HomePage extends StatefulWidget {
   const HomePage({Key key, this.title}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -21,65 +22,65 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Asuka"),
+        title: const Text("Asuka"),
       ),
       body: ListView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         children: [
           ElevatedButton(
-            child: Text('Second Page'),
+            child: const Text('Second Page'),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SecondPage(),
+                  builder: (context) => const SecondPage(),
                 ),
               );
             },
           ),
-          SizedBox(height: 10),
-          Divider(),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
+          const Divider(),
+          const SizedBox(height: 10),
           ElevatedButton(
-            child: Text('SnackBar'),
             onPressed: homeController.onClickSnackbar,
+            child: const Text('SnackBar'),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ElevatedButton(
-            child: Text('Dialog'),
             onPressed: homeController.onClickDialog,
+            child: const Text('Dialog'),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ElevatedButton(
-            child: Text('ModalSheet'),
+            child: const Text('ModalSheet'),
             onPressed: () => homeController.onClickBottomSheet(),
           ),
           ElevatedButton(
-            child: Text('SnackBar Warning'),
+            child: const Text('SnackBar Warning'),
             onPressed: () {
               AsukaSnackbar.warning("Warning").show();
             },
           ),
           ElevatedButton(
-            child: Text('SnackBar Success'),
+            child: const Text('SnackBar Success'),
             onPressed: () {
               AsukaSnackbar.success("Success").show();
             },
           ),
           ElevatedButton(
-            child: Text('SnackBar alert'),
+            child: const Text('SnackBar alert'),
             onPressed: () {
               AsukaSnackbar.alert("alert").show();
             },
           ),
           ElevatedButton(
-            child: Text('SnackBar info'),
+            child: const Text('SnackBar info'),
             onPressed: () {
               AsukaSnackbar.info("info").show();
             },
           ),
           ElevatedButton(
-            child: Text('SnackBar message'),
+            child: const Text('SnackBar message'),
             onPressed: () {
               AsukaSnackbar.message("message").show();
             },
@@ -98,9 +99,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          TextField(),
+          const TextField(),
           ElevatedButton(
-            child: Text('Show Modal Bottom Sheet'),
+            child: const Text('Show Modal Bottom Sheet'),
             onPressed: () {
               homeController.onClickModalBottomSheet();
             },

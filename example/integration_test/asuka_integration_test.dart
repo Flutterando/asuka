@@ -97,7 +97,7 @@ void main() {
         MaterialApp(
           builder: Asuka.builder,
           home: Scaffold(
-            backgroundColor: Color.fromARGB(255, 230, 227, 227),
+            backgroundColor: const Color.fromARGB(255, 230, 227, 227),
             body: Builder(
               builder: (context) {
                 return Center(
@@ -137,7 +137,7 @@ void main() {
         MaterialApp(
           builder: Asuka.builder,
           home: Scaffold(
-            backgroundColor: Color.fromARGB(255, 230, 227, 227),
+            backgroundColor: const Color.fromARGB(255, 230, 227, 227),
             body: Builder(
               builder: (context) {
                 return Center(
@@ -186,7 +186,7 @@ void main() {
         MaterialApp(
           builder: Asuka.builder,
           home: Scaffold(
-            backgroundColor: Color.fromARGB(255, 230, 227, 227),
+            backgroundColor: const Color.fromARGB(255, 230, 227, 227),
             body: Builder(
               builder: (context) {
                 return Center(
@@ -248,7 +248,7 @@ void main() {
         MaterialApp(
           builder: Asuka.builder,
           home: Scaffold(
-            backgroundColor: Color.fromARGB(255, 230, 227, 227),
+            backgroundColor: const Color.fromARGB(255, 230, 227, 227),
             body: Builder(
               builder: (context) {
                 return Center(
@@ -310,7 +310,7 @@ MaterialApp showSnackbar(AsukaSnackbar asukaSnackbar, String buttonText) {
   return MaterialApp(
     builder: Asuka.builder,
     home: Scaffold(
-      backgroundColor: Color.fromARGB(255, 230, 227, 227),
+      backgroundColor: const Color.fromARGB(255, 230, 227, 227),
       body: Builder(
         builder: (context) {
           return Center(

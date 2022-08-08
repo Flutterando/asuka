@@ -6,7 +6,7 @@ class SecondPage extends StatefulWidget {
   const SecondPage({Key key, this.title}) : super(key: key);
 
   @override
-  _SecondPageState createState() => _SecondPageState();
+  State<SecondPage> createState() => _SecondPageState();
 }
 
 class _SecondPageState extends State<SecondPage> {
@@ -16,7 +16,7 @@ class _SecondPageState extends State<SecondPage> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Asuka"),
+          title: const Text("Asuka"),
         ),
         body: Center(
           child: Column(
@@ -29,54 +29,54 @@ class _SecondPageState extends State<SecondPage> {
                   color: Colors.red,
                 ),
               ),
-              TextField(),
+              const TextField(),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               ElevatedButton(
-                  child: Text('Back to Home'),
+                  child: const Text('Back to Home'),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
