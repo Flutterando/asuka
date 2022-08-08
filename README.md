@@ -14,12 +14,12 @@ dependencies:
 now, add in your MaterialApp:
 
 ```dart
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 
 MaterialApp(
-    builder: asuka.builder,
+    builder: Asuka.builder,
     navigatorObservers: [
-       asuka.asukaHeroController //if u don`t add this Hero will not work
+       Asuka.asukaHeroController //if u don`t add this Hero will not work
     ],
 );
 
@@ -32,10 +32,10 @@ THAT'S IT!
 ### Snackbars
 
 ```dart
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 
 //use same Scaffold documetation
-asuka.showSnackBar(SnackBar(
+Asuka.showSnackBar(SnackBar(
     content: Text("Hello World"),
 ));
 
@@ -55,7 +55,7 @@ AsukaSnackbar.message("message").show();
 ### Overlay
 
 ```dart
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 
 var entry = OverlayEntry(
     builder: (context) {
@@ -65,7 +65,7 @@ var entry = OverlayEntry(
   },
 );
 
-asuka.addOverlay(entry);
+Asuka.addOverlay(entry);
 
 //after
 entry.remove();
@@ -75,20 +75,20 @@ entry.remove();
 ### BottomSheet
 
 ```dart
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 
 //use same Scaffold documetation
-asuka.showBottomSheet((context) => Container());
+Asuka.showBottomSheet((context) => Container());
 
 ```
 
 ### Dialogs
 
 ```dart
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 
 //use same Material documetation
-asuka.showDialog(
+Asuka.showDialog(
     builder: (context) => AlertDialog(),
 );
 

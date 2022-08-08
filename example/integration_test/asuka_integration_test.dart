@@ -1,5 +1,4 @@
-import 'package:asuka/asuka.dart' as asuka;
-import 'package:asuka/snackbars/asuka_snack_bar.dart';
+import 'package:asuka/asuka.dart';
 import 'package:example/src/home.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -15,7 +14,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        showSnackbar(asuka.AsukaSnackbar.warning('test'), 'Warning'),
+        showSnackbar(AsukaSnackbar.warning('test'), 'Warning'),
       );
 
       // Create the Finders.
@@ -31,7 +30,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        showSnackbar(asuka.AsukaSnackbar.success('test'), 'Success'),
+        showSnackbar(AsukaSnackbar.success('test'), 'Success'),
       );
 
       // Create the Finders.
@@ -47,7 +46,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        showSnackbar(asuka.AsukaSnackbar.alert('test'), 'Alert'),
+        showSnackbar(AsukaSnackbar.alert('test'), 'Alert'),
       );
 
       // Create the Finders.
@@ -63,7 +62,7 @@ void main() {
     (tester) async {
       const String content = 'test';
       await tester.pumpWidget(
-        showSnackbar(asuka.AsukaSnackbar.info('test'), 'Info'),
+        showSnackbar(AsukaSnackbar.info('test'), 'Info'),
       );
 
       // Create the Finders.
@@ -78,8 +77,8 @@ void main() {
     'AsukaSnackbar.message appears',
     (tester) async {
       const String content = 'test';
-      await tester.pumpWidget(
-          showSnackbar(asuka.AsukaSnackbar.message('test'), 'Message'));
+      await tester
+          .pumpWidget(showSnackbar(AsukaSnackbar.message('test'), 'Message'));
 
       // Create the Finders.
       final btnFinder = find.text('Message');
@@ -96,7 +95,7 @@ void main() {
       const String content = 'New Snackbar';
       await tester.pumpWidget(
         MaterialApp(
-          builder: asuka.builder,
+          builder: Asuka.builder,
           home: Scaffold(
             backgroundColor: Color.fromARGB(255, 230, 227, 227),
             body: Builder(
@@ -106,7 +105,7 @@ void main() {
                     style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
                     onPressed: () {
                       controller.onClickSnackbar;
-                      asuka.showSnackBar(
+                      Asuka.showSnackBar(
                         const SnackBar(
                           content: Text('New Snackbar'),
                         ),
@@ -136,7 +135,7 @@ void main() {
       const String content = 'Dialog';
       await tester.pumpWidget(
         MaterialApp(
-          builder: asuka.builder,
+          builder: Asuka.builder,
           home: Scaffold(
             backgroundColor: Color.fromARGB(255, 230, 227, 227),
             body: Builder(
@@ -146,7 +145,7 @@ void main() {
                     style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
                     onPressed: () {
                       controller.onClickDialog;
-                      asuka.showDialog(
+                      Asuka.showDialog(
                         builder: (context) => AlertDialog(
                           title: const Text('Dialog'),
                           content: const Text('This is a custom Dialog '),
@@ -185,7 +184,7 @@ void main() {
       const String content = 'Cancel';
       await tester.pumpWidget(
         MaterialApp(
-          builder: asuka.builder,
+          builder: Asuka.builder,
           home: Scaffold(
             backgroundColor: Color.fromARGB(255, 230, 227, 227),
             body: Builder(
@@ -195,7 +194,7 @@ void main() {
                     style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
                     onPressed: () {
                       controller.onClickBottomSheet;
-                      asuka.showBottomSheet(
+                      Asuka.showBottomSheet(
                         (context) {
                           return Material(
                             elevation: 7,
@@ -247,7 +246,7 @@ void main() {
       const String content = 'Cancel';
       await tester.pumpWidget(
         MaterialApp(
-          builder: asuka.builder,
+          builder: Asuka.builder,
           home: Scaffold(
             backgroundColor: Color.fromARGB(255, 230, 227, 227),
             body: Builder(
@@ -257,7 +256,7 @@ void main() {
                     style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
                     onPressed: () {
                       controller.onClickModalBottomSheet;
-                      asuka.showModalBottomSheet(
+                      Asuka.showModalBottomSheet(
                         builder: (context) => Material(
                           borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(16),
@@ -309,7 +308,7 @@ void main() {
 
 MaterialApp showSnackbar(AsukaSnackbar asukaSnackbar, String buttonText) {
   return MaterialApp(
-    builder: asuka.builder,
+    builder: Asuka.builder,
     home: Scaffold(
       backgroundColor: Color.fromARGB(255, 230, 227, 227),
       body: Builder(

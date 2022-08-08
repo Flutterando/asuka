@@ -1,13 +1,13 @@
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 
 class HomeController {
   void onClickSnackbar() {
-    asuka.showSnackBar(SnackBar(content: Text('New snackBar!!!')));
+    Asuka.showSnackBar(SnackBar(content: Text('New snackBar!!!')));
   }
 
   void onClickDialog() {
-    asuka.showDialog(
+    Asuka.showDialog(
       builder: (context) => AlertDialog(
         title: Text('My Dialog'),
         content: Text('This is Dialog Content'),
@@ -30,7 +30,7 @@ class HomeController {
   }
 
   void onClickBottomSheet() {
-    asuka.showBottomSheet((context) {
+    Asuka.showBottomSheet((context) {
       return Material(
         elevation: 7,
         child: SizedBox(
@@ -55,7 +55,7 @@ class HomeController {
   }
 
   void onClickModalBottomSheet() {
-    asuka.showModalBottomSheet(
+    Asuka.showModalBottomSheet(
       builder: (context) => Material(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(16),
