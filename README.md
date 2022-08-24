@@ -13,10 +13,10 @@
   <p align="center">
     A Simple and Clean approach to Snackbars, Dialogs and ModalSheets in a single provider.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <!-- <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <br /> -->
     <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <!-- <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a> -->
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     ·
@@ -55,12 +55,8 @@ Social - GitHub Forks, Github Org's Stars (if using Flutterando as the main org)
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#sponsors">Sponsors</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#sponsors">Sponsors</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#how-to-use">How to Use</a></li>
     <li><a href="#features">Features</a></li>
@@ -93,7 +89,7 @@ With few and intuitive lines of code you can have those in your project in a lot
 ## Sponsors
 
 <a href="https://fteam.dev">
-    <img src="images/sponsor-logo.png" alt="Logo" width="180">
+    <img src="images/sponsor-logo.png" alt="Logo" width="120" style="aspect-ratio: 1/1; border-radius: 50%">
   </a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -147,14 +143,14 @@ AsukaSnackbar.success("success").show();
 
 <br>
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the_ 🚧 [Documentation]() _-Currently being updated-_ 🚧
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 
-<!-- ROADMAP -->
+<!-- FEATURES -->
 ## Features
 
 - ✅ Snackbars
@@ -171,8 +167,8 @@ Right now this package has concluded all his intended features. If you have any 
 
 <!-- CONTRIBUTING -->
 ## Contributing
-
-[Contributing Guidelines](https://github.com/angular/angular/blob/main/CONTRIBUTING.md)
+ 
+🚧 [Contributing Guidelines]() - _Currently being updated_ 🚧
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -217,9 +213,10 @@ Flutterando Community
   TODO: Escrever as Contributing Guidelines
 ->
 
-<!-- ACKNOWLEDGMENTS -->
-## Contributors 
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements 
 
+These are the people who 
 <a href="https://github.com/flutterando/asuka/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=flutterando/asuka" />
 </a>
@@ -229,7 +226,7 @@ Flutterando Community
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGMENTS -->
+<!-- MANTAINED BY -->
 ## Maintaned by
 
 ---
@@ -237,7 +234,7 @@ Flutterando Community
 <br>
 <p align="center">
   <a href="https://www.flutterando.com.br">
-    <img width="110px" src="images/logo-flutterando.png">
+    <img width="110px" src="images/logo-flutterando.png" style="border-radius: 50%;">
   </a>
   <p align="center">
     Built and maintained by <a href="https://www.flutterando.com.br">Flutterando</a>.
