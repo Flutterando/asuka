@@ -1,3 +1,10 @@
+## [2.0.1] - 29/07/2022.
+###  Changed
+* Refactor: Asuka is now a singleton.
+### Removed
+* Removed imports with prefix asuka.
+### Added
+* Fix flutter version
 ## [1.0.4] - 22/07/2020.
 
 * Fix bug in Channel Stable

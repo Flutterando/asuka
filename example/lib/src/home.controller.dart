@@ -1,28 +1,28 @@
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 
 class HomeController {
   void onClickSnackbar() {
-    asuka.showSnackBar(SnackBar(content: Text('New snackBar!!!')));
+    Asuka.showSnackBar(const SnackBar(content: Text('New snackBar!!!')));
   }
 
   void onClickDialog() {
-    asuka.showDialog(
+    Asuka.showDialog(
       builder: (context) => AlertDialog(
-        title: Text('My Dialog'),
-        content: Text('This is Dialog Content'),
+        title: const Text('My Dialog'),
+        content: const Text('This is Dialog Content'),
         actions: [
           TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text('Ok'),
+            child: const Text('Ok'),
           ),
         ],
       ),
@@ -30,21 +30,21 @@ class HomeController {
   }
 
   void onClickBottomSheet() {
-    asuka.showBottomSheet((context) {
+    Asuka.showBottomSheet((context) {
       return Material(
         elevation: 7,
         child: SizedBox(
           height: MediaQuery.of(context).size.height / 2,
           child: ListView(
             children: [
-              ListTile(
+              const ListTile(
                 title: Text('Option 1'),
               ),
-              ListTile(
+              const ListTile(
                 title: Text('Option 2'),
               ),
               ListTile(
-                title: Text('Cancel'),
+                title: const Text('Cancel'),
                 onTap: () => Navigator.pop(context),
               ),
             ],
@@ -55,9 +55,9 @@ class HomeController {
   }
 
   void onClickModalBottomSheet() {
-    asuka.showModalBottomSheet(
+    Asuka.showModalBottomSheet(
       builder: (context) => Material(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16),
           topRight: Radius.circular(16),
         ),
@@ -66,14 +66,14 @@ class HomeController {
           height: MediaQuery.of(context).size.height / 2,
           child: ListView(
             children: [
-              ListTile(
+              const ListTile(
                 title: Text('Option 1'),
               ),
-              ListTile(
+              const ListTile(
                 title: Text('Option 2'),
               ),
               ListTile(
-                title: Text('Cancel'),
+                title: const Text('Cancel'),
                 onTap: () => Navigator.pop(context),
               ),
             ],
