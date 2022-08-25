@@ -1,3 +1,6 @@
+## [2.0.1+1] - 29/07/2022.
+###  Changed
+* Doc: Updated Readme.
 ## [2.0.1] - 29/07/2022.
 ###  Changed
 * Refactor: Asuka is now a singleton.
