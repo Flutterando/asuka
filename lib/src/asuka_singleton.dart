@@ -60,7 +60,7 @@ class _Asuka {
 ///Asuka showSnackBar
 ///Asuka [showSnackBar] was implemented with the purpose of supplying the user with a complete [snackbar].
 ///
-///Code Example
+///Example:
 ///
 ///Controller:
 ///
@@ -128,7 +128,7 @@ class _Asuka {
 ///
 ///Asuka [showBottomSheet] was implemented with the purpose of supplying the user with a complete [bottomsheet].
 ///
-///Code Example
+///Example:
 ///
 ///Controller:
 ///
@@ -197,7 +197,7 @@ class _Asuka {
 ///
 ///Asuka showModalBottomSheet was implemented with the purpose of supplying the user with a complete modal bottom sheet.
 ///
-///Code Example
+///Example:
 ///
 ///Controller:
 ///
@@ -285,7 +285,7 @@ class _Asuka {
   ///
   /// Asuka [showDialog] was implemented with the purpose of supplying the user with a [dialog].
   ///
-  ///Code Example
+  ///Example:
   ///
   /// Controller:
   ///```
@@ -345,7 +345,7 @@ class _Asuka {
   ///         builder: asuka.builder,
   ///         ...
   /// 
-  /// Example
+  /// Example:
   /// ```
 /// import 'package:asuka/asuka.dart' as asuka;
 ///
