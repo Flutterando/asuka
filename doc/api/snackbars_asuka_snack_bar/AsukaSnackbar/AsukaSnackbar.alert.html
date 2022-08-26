@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the AsukaSnackbar.alert constructor from Class AsukaSnackbar from the asuka_snack_bar library, for the Dart programming language.">
+  <title>AsukaSnackbar.alert constructor - AsukaSnackbar - asuka_snack_bar library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">asuka</a></li>
+    <li><a href="../../snackbars_asuka_snack_bar/snackbars_asuka_snack_bar-library.html">asuka_snack_bar</a></li>
+    <li><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar-class.html">AsukaSnackbar</a></li>
+    <li class="self-crumb">AsukaSnackbar.alert factory constructor</li>
+  </ol>
+  <div class="self-name">AsukaSnackbar.alert</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-constructor">AsukaSnackbar.alert</span> constructor 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      <span class="name ">AsukaSnackbar.alert</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="alert-param-content"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">content</span>, </span></li>
+<li><span class="parameter" id="alert-param-key">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>}</span></li>
+</ol>)
+    </section>
+
+    
+<section class="desc markdown">
+  <p>Creates a subclass of <a href="../../snackbars_asuka_snack_bar/AsukaSnackbar-class.html">AsukaSnackbar</a> called <code>AsukaSnackbar.Alert</code>
+passing the <code>key</code>, <code>content</code>, setting the <code>color</code> to <a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color(0xffFA5456)</a> and the <code>icon</code> to <a href="https://api.flutter.dev/flutter/material/Icons/report-constant.html">Icons.report</a>.
+This <a href="../../snackbars_asuka_snack_bar/AsukaSnackbar-class.html">AsukaSnackbar</a> was created to with the purpose of supply the user with an alert <code>Snackbar</code>.</p>
+<p>Example:</p>
+<pre class="language-dart"><code>ElevatedButton(
+onPressed: () {
+  asuka.AsukaSnackbar.alert("Alert").show();
+},
+child: const Text("Show alert"),
+)
+</code></pre>
+<p>This code generates an ElevatedButton, when pressed, it calls
+asuka.AsukaSnackbar.alert("Alert").show()</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">factory AsukaSnackbar.alert(String content, {Key? key}) =&gt;
+    AsukaSnackbar._(key, content, Color(0xffFA5456), icon: Icons.report);</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">asuka</a></li>
+  <li><a href="../../snackbars_asuka_snack_bar/snackbars_asuka_snack_bar-library.html">asuka_snack_bar</a></li>
+  <li><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar-class.html">AsukaSnackbar</a></li>
+  <li class="self-crumb">AsukaSnackbar.alert factory constructor</li>
+</ol>
+
+
+    <h5>AsukaSnackbar class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar-class.html#constructors">Constructors</a></li>
+          <li><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar/AsukaSnackbar.alert.html">alert</a></li>
+          <li><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar/AsukaSnackbar.info.html">info</a></li>
+          <li><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar/AsukaSnackbar.message.html">message</a></li>
+          <li><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar/AsukaSnackbar.success.html">success</a></li>
+          <li><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar/AsukaSnackbar.warning.html">warning</a></li>
+
+
+    <li class="section-title inherited">
+      <a href="../../snackbars_asuka_snack_bar/AsukaSnackbar-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/action.html">action</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/animation.html">animation</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/backgroundColor.html">backgroundColor</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/behavior.html">behavior</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/clipBehavior.html">clipBehavior</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/content.html">content</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/dismissDirection.html">dismissDirection</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/duration.html">duration</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/elevation.html">elevation</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/margin.html">margin</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/onVisible.html">onVisible</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/padding.html">padding</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/shape.html">shape</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/width.html">width</a></li>
+
+    <li class="section-title"><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar-class.html#instance-methods">Methods</a></li>
+    <li><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar/call.html">call</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/StatefulWidget/createElement.html">createElement</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/createState.html">createState</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar/show.html">show</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/material/SnackBar/withAnimation.html">withAnimation</a></li>
+
+    <li class="section-title inherited"><a href="../../snackbars_asuka_snack_bar/AsukaSnackbar-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    asuka
+      2.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+

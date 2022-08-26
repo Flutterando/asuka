@@ -77,35 +77,91 @@ class AsukaSnackbar extends SnackBar {
   ///Creates a subclass of [AsukaSnackbar] called [AsukaSnackbar.Warning]
   ///passing the [key], [content], setting the [color] to [Color(0xFFE6CA72)] and the [icon] to [Icons.warning].
   ///This [AsukaSnackbar] was created to with the purpose of supply the user with a warning [Snackbar].
+  ///
+  ///Example:
+  ///```
+  ///ElevatedButton(
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.warning("Warning").show();
+  /// },
+  /// child: const Text("Show warning"),
+  ///)
+  /// ```
+  /// This code generates an ElevatedButton, when pressed, it calls
+  /// asuka.AsukaSnackbar.warning("Warning").show()
   factory AsukaSnackbar.warning(String content, {Key? key}) =>
       AsukaSnackbar._(key, content, Color(0xFFE6CA72), icon: Icons.warning);
 
   ///Creates a subclass of [AsukaSnackbar] called [AsukaSnackbar.Alert]
   ///passing the [key], [content], setting the [color] to [Color(0xffFA5456)] and the [icon] to [Icons.report].
   ///This [AsukaSnackbar] was created to with the purpose of supply the user with an alert [Snackbar].
+  ///
+  ///Example:
+  ///```
+  ///ElevatedButton(
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.alert("Alert").show();
+  /// },
+  /// child: const Text("Show alert"),
+  ///)
+  /// ```
+  /// This code generates an ElevatedButton, when pressed, it calls
+  /// asuka.AsukaSnackbar.alert("Alert").show()
   factory AsukaSnackbar.alert(String content, {Key? key}) =>
       AsukaSnackbar._(key, content, Color(0xffFA5456), icon: Icons.report);
 
   ///Creates a subclass of [AsukaSnackbar] called [AsukaSnackbar.Info]
   ///passing the [key], [content], setting the [color] to [Color(0xff3196DA)], an [action] and the [icon] to [Icons.help].
   ///This [AsukaSnackbar] was created to with the purpose of supply the user with an info [Snackbar].
-  factory AsukaSnackbar.info(String content,
-          {Key? key, SnackBarAction? snackBarAction}) =>
-      AsukaSnackbar._(key, content, Color(0xff3196DA),
-          action: snackBarAction, icon: Icons.help);
+  ///
+  ///Example:
+  ///```
+  ///ElevatedButton(
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.info("Info").show();
+  /// },
+  /// child: const Text("Show Info"),
+  ///)
+  ///```
+  ///This code generates an ElevatedButton, when pressed, it calls
+  ///asuka.AsukaSnackbar.info("Info").show()
+  factory AsukaSnackbar.info(String content, {Key? key, SnackBarAction? snackBarAction}) =>
+      AsukaSnackbar._(key, content, Color(0xff3196DA), action: snackBarAction, icon: Icons.help);
 
   ///Creates a subclass of [AsukaSnackbar] called [AsukaSnackbar.Success]
   ///passing the [key], [content], setting the [color] to [Color(0xFF80AD49)], an [action] and the [icon] to [Icons.check_circle].
   ///This [AsukaSnackbar] was created to with the purpose of supply the user with a success [Snackbar].
-  factory AsukaSnackbar.success(String content,
-          {Key? key, SnackBarAction? snackBarAction}) =>
+  ///
+  ///Example:
+  ///```
+  ///ElevatedButton(
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.success("Success").show();
+  /// },
+  /// child: const Text("Show success"),
+  ///)
+  /// ```
+  /// This code generates an ElevatedButton, when pressed, it calls
+  /// asuka.AsukaSnackbar.success("Success").show()
+  factory AsukaSnackbar.success(String content, {Key? key, SnackBarAction? snackBarAction}) =>
       AsukaSnackbar._(key, content, Color(0xFF80AD49),
           action: snackBarAction, icon: Icons.check_circle);
 
   ///Creates a subclass of [AsukaSnackbar] called [AsukaSnackbar.Message]
   ///passing the [key], [content], setting the [color] to [Color(0xff484848)].
   ///This [AsukaSnackbar] was created to with the purpose of supply the user with a message [Snackbar].
-
+  ///
+  ///Example:
+  ///```
+  ///ElevatedButton(
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.message("Message").show();
+  /// },
+  /// child: const Text("Show message"),
+  ///)
+  /// ```
+  /// This code generates an ElevatedButton, when pressed, it calls
+  /// asuka.AsukaSnackbar.message("Message").show()
   factory AsukaSnackbar.message(String content, {Key? key}) =>
       AsukaSnackbar._(key, content, Color(0xff484848));
 

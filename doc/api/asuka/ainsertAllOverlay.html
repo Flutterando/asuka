@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the ainsertAllOverlay function from the asuka library, for the Dart programming language.">
+  <title>ainsertAllOverlay function - asuka library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">asuka</a></li>
+    <li><a href="../asuka/asuka-library.html">asuka</a></li>
+    <li class="self-crumb"><span class="deprecated">ainsertAllOverlay</span> function</li>
+  </ol>
+  <div class="self-name">ainsertAllOverlay</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-function">ainsertAllOverlay</span> function 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<div>
+  <ol class="annotation-list">
+    <li>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `Asuka.ainsertAllOverlay` instead&#39;)</li>
+  </ol>
+</div>
+
+<span class="returntype">void</span>
+<span class="name deprecated">ainsertAllOverlay</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="ainsertAllOverlay-param-entries"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/OverlayEntry-class.html">OverlayEntry</a></span>&gt;</span></span> <span class="parameter-name">entries</span>, </span></li>
+<li><span class="parameter" id="ainsertAllOverlay-param-below">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/OverlayEntry-class.html">OverlayEntry</a>?</span> <span class="parameter-name">below</span>, </span></li>
+<li><span class="parameter" id="ainsertAllOverlay-param-above"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/OverlayEntry-class.html">OverlayEntry</a>?</span> <span class="parameter-name">above</span>, </span></li>
+<li><span class="parameter" id="ainsertAllOverlay-param-callback"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">callback</span> = <span class="default-value">false</span>}</span></li>
+</ol>)
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Insert all the entries in the given iterable.</p>
+<p>If <code>below</code> is non-null, the entries are inserted just below <code>below</code>.
+If <code>above</code> is non-null, the entries are inserted just above <code>above</code>.
+Otherwise, the entries are inserted on top.</p>
+<p>It is an error to specify both <code>above</code> and <code>below</code>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@Deprecated(&#39;Use `Asuka.ainsertAllOverlay` instead&#39;)
+void ainsertAllOverlay(Iterable&lt;OverlayEntry&gt; entries,
+    {OverlayEntry? below, OverlayEntry? above, bool callback = false}) {
+  Asuka.ainsertAllOverlay(entries,
+      above: above, below: below, callback: callback);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">asuka</a></li>
+  <li><a href="../asuka/asuka-library.html">asuka</a></li>
+  <li class="self-crumb"><span class="deprecated">ainsertAllOverlay</span> function</li>
+</ol>
+
+
+    <h5>asuka library</h5>
+    <ol>
+  <li class="section-title"><a href="../asuka/asuka-library.html#classes">Classes</a></li>
+  <li><a href="../snackbars_asuka_snack_bar/AsukaSnackbar-class.html">AsukaSnackbar</a></li>
+
+
+
+  <li class="section-title"><a href="../asuka/asuka-library.html#constants">Constants</a></li>
+  <li><a href="../asuka/Asuka-constant.html">Asuka</a></li>
+
+  <li class="section-title"><a href="../asuka/asuka-library.html#properties">Properties</a></li>
+  <li><a class="deprecated" href="../asuka/asukaHeroController.html">asukaHeroController</a></li>
+
+  <li class="section-title"><a href="../asuka/asuka-library.html#functions">Functions</a></li>
+  <li><a class="deprecated" href="../asuka/addOverlay.html">addOverlay</a></li>
+  <li><a class="deprecated" href="../asuka/ainsertAllOverlay.html">ainsertAllOverlay</a></li>
+  <li><a class="deprecated" href="../asuka/builder.html">builder</a></li>
+  <li><a class="deprecated" href="../asuka/hideCurrentSnackBar.html">hideCurrentSnackBar</a></li>
+  <li><a class="deprecated" href="../asuka/removeCurrentSnackBar.html">removeCurrentSnackBar</a></li>
+  <li><a class="deprecated" href="../asuka/showBottomSheet.html">showBottomSheet</a></li>
+  <li><a class="deprecated" href="../asuka/showDialog.html">showDialog</a></li>
+  <li><a class="deprecated" href="../asuka/showModalBottomSheet.html">showModalBottomSheet</a></li>
+  <li><a class="deprecated" href="../asuka/showSnackBar.html">showSnackBar</a></li>
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    asuka
+      2.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+
