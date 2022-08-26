@@ -81,12 +81,11 @@ class AsukaSnackbar extends SnackBar {
   ///Example:
   ///```
   ///ElevatedButton(
-  ///               style: ElevatedButton.styleFrom(primary: Colors.red[300]),
-  ///               onPressed: () {
-  ///                 asuka.AsukaSnackbar.warning("Warning").show();
-  ///               },
-  ///               child: const Text('Warning'),
-  ///             )
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.warning("Warning").show();
+  /// },
+  /// child: const Text("Show warning"),
+  ///)
   /// ```
   /// This code generates an ElevatedButton, when pressed, it calls
   /// asuka.AsukaSnackbar.warning("Warning").show()
@@ -99,13 +98,12 @@ class AsukaSnackbar extends SnackBar {
   ///
   ///Example:
   ///```
-  /// ElevatedButton(
-  ///                   style: ElevatedButton.styleFrom(primary: Colors.red[300]),
-  ///                   onPressed: () {
-  ///                     asuka.AsukaSnackbar.alert("Alert").show();
-  ///                   },
-  ///                   child: const Text('Alert'),
-  ///                 )
+  ///ElevatedButton(
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.alert("Alert").show();
+  /// },
+  /// child: const Text("Show alert"),
+  ///)
   /// ```
   /// This code generates an ElevatedButton, when pressed, it calls
   /// asuka.AsukaSnackbar.alert("Alert").show()
@@ -118,16 +116,15 @@ class AsukaSnackbar extends SnackBar {
   ///
   ///Example:
   ///```
-  /// ElevatedButton(
-  ///                   style: ElevatedButton.styleFrom(primary: Colors.red[300]),
-  ///                   onPressed: () {
-  ///                     asuka.AsukaSnackbar.info("info").show();
-  ///                   },
-  ///                   child: const Text('Info'),
-  ///                 )
+  ///ElevatedButton(
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.info("Info").show();
+  /// },
+  /// child: const Text("Show Info"),
+  ///)
   ///```
   ///This code generates an ElevatedButton, when pressed, it calls
-  ///asuka.AsukaSnackbar.info("info").show()
+  ///asuka.AsukaSnackbar.info("Info").show()
   factory AsukaSnackbar.info(String content, {Key? key, SnackBarAction? snackBarAction}) =>
       AsukaSnackbar._(key, content, Color(0xff3196DA), action: snackBarAction, icon: Icons.help);
 
@@ -137,13 +134,12 @@ class AsukaSnackbar extends SnackBar {
   ///
   ///Example:
   ///```
-  /// ElevatedButton(
-  ///                   style: ElevatedButton.styleFrom(primary: Colors.red[300]),
-  ///                   onPressed: () {
-  ///                     asuka.AsukaSnackbar.success("Success").show();
-  ///                   },
-  ///                   child: const Text('Success'),
-  ///                 )
+  ///ElevatedButton(
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.success("Success").show();
+  /// },
+  /// child: const Text("Show success"),
+  ///)
   /// ```
   /// This code generates an ElevatedButton, when pressed, it calls
   /// asuka.AsukaSnackbar.success("Success").show()
@@ -157,16 +153,15 @@ class AsukaSnackbar extends SnackBar {
   ///
   ///Example:
   ///```
-  /// ElevatedButton(
-  ///                   style: ElevatedButton.styleFrom(primary: Colors.red[300]),
-  ///                   onPressed: () {
-  ///                     asuka.AsukaSnackbar.message("message").show();
-  ///                   },
-  ///                   child: const Text('Message'),
-  ///                 )
+  ///ElevatedButton(
+  /// onPressed: () {
+  ///   asuka.AsukaSnackbar.message("Message").show();
+  /// },
+  /// child: const Text("Show message"),
+  ///)
   /// ```
   /// This code generates an ElevatedButton, when pressed, it calls
-  /// asuka.AsukaSnackbar.message("message").show()
+  /// asuka.AsukaSnackbar.message("Message").show()
   factory AsukaSnackbar.message(String content, {Key? key}) =>
       AsukaSnackbar._(key, content, Color(0xff484848));
 
