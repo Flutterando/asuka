@@ -91,8 +91,9 @@ class _HomePageState extends State<HomePage> {
                 tag: "HeroTag",
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Colors.red),
+                    borderRadius: BorderRadius.circular(100),
+                    color: Colors.red,
+                  ),
                   width: 50,
                   height: 50,
                 ),
