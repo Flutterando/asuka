@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_statements
+
 import 'package:asuka/asuka.dart';
 import 'package:example/src/home.controller.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +9,12 @@ import 'package:integration_test/integration_test.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  var controller = HomeController();
+  final controller = HomeController();
 
   testWidgets(
     'AsukaSnackbar.warning appears',
     (tester) async {
-      const String content = 'test';
+      const content = 'test';
       await tester.pumpWidget(
         showSnackbar(AsukaSnackbar.warning('test'), 'Warning'),
       );
@@ -28,7 +30,7 @@ void main() {
   testWidgets(
     'AsukaSnackbar.success appears',
     (tester) async {
-      const String content = 'test';
+      const content = 'test';
       await tester.pumpWidget(
         showSnackbar(AsukaSnackbar.success('test'), 'Success'),
       );
@@ -44,7 +46,7 @@ void main() {
   testWidgets(
     'AsukaSnackbar.alert appears',
     (tester) async {
-      const String content = 'test';
+      const content = 'test';
       await tester.pumpWidget(
         showSnackbar(AsukaSnackbar.alert('test'), 'Alert'),
       );
@@ -60,7 +62,7 @@ void main() {
   testWidgets(
     'AsukaSnackbar.info appears',
     (tester) async {
-      const String content = 'test';
+      const content = 'test';
       await tester.pumpWidget(
         showSnackbar(AsukaSnackbar.info('test'), 'Info'),
       );
@@ -76,9 +78,13 @@ void main() {
   testWidgets(
     'AsukaSnackbar.message appears',
     (tester) async {
-      const String content = 'test';
-      await tester
-          .pumpWidget(showSnackbar(AsukaSnackbar.message('test'), 'Message'));
+      const content = 'test';
+      await tester.pumpWidget(
+        showSnackbar(
+          AsukaSnackbar.message('test'),
+          'Message',
+        ),
+      );
 
       // Create the Finders.
       final btnFinder = find.text('Message');
@@ -92,7 +98,7 @@ void main() {
   testWidgets(
     'controller.onClickSnackbar appears',
     (tester) async {
-      const String content = 'New Snackbar';
+      const content = 'New Snackbar';
       await tester.pumpWidget(
         MaterialApp(
           builder: Asuka.builder,
@@ -132,7 +138,7 @@ void main() {
   testWidgets(
     'controller.onClickDialog appears',
     (tester) async {
-      const String content = 'Dialog';
+      const content = 'Dialog';
       await tester.pumpWidget(
         MaterialApp(
           builder: Asuka.builder,
@@ -181,7 +187,7 @@ void main() {
   testWidgets(
     'controller.onClickBottomSheet showBottomSheet appears',
     (tester) async {
-      const String content = 'Cancel';
+      const content = 'Cancel';
       await tester.pumpWidget(
         MaterialApp(
           builder: Asuka.builder,
@@ -243,7 +249,7 @@ void main() {
   testWidgets(
     'controller.onClickModalBottomSheet showModalBottomSheet appears',
     (tester) async {
-      const String content = 'Cancel';
+      const content = 'Cancel';
       await tester.pumpWidget(
         MaterialApp(
           builder: Asuka.builder,
