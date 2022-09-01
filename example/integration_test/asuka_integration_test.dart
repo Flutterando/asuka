@@ -108,7 +108,9 @@ void main() {
               builder: (context) {
                 return Center(
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[900],
+                    ),
                     onPressed: () {
                       controller.onClickSnackbar;
                       Asuka.showSnackBar(
@@ -148,7 +150,9 @@ void main() {
               builder: (context) {
                 return Center(
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[900],
+                    ),
                     onPressed: () {
                       controller.onClickDialog;
                       Asuka.showDialog(
@@ -197,7 +201,9 @@ void main() {
               builder: (context) {
                 return Center(
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[900],
+                    ),
                     onPressed: () {
                       controller.onClickBottomSheet;
                       Asuka.showBottomSheet(
@@ -259,7 +265,9 @@ void main() {
               builder: (context) {
                 return Center(
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[900],
+                    ),
                     onPressed: () {
                       controller.onClickModalBottomSheet;
                       Asuka.showModalBottomSheet(
@@ -321,7 +329,9 @@ MaterialApp showSnackbar(AsukaSnackbar asukaSnackbar, String buttonText) {
         builder: (context) {
           return Center(
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(primary: Colors.grey[900]),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.grey[900],
+              ),
               onPressed: () {
                 asukaSnackbar.show();
               },
