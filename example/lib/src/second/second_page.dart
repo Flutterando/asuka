@@ -16,7 +16,7 @@ class _SecondPageState extends State<SecondPage> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Asuka"),
+          title: const Text('Asuka'),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -24,7 +24,7 @@ class _SecondPageState extends State<SecondPage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Hero(
-                  tag: "HeroTag",
+                  tag: 'HeroTag',
                   child: Container(
                     height: 100,
                     color: Colors.red,
@@ -35,55 +35,55 @@ class _SecondPageState extends State<SecondPage> {
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
                 ElevatedButton(
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
                 ElevatedButton(
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
                 ElevatedButton(
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
                 ElevatedButton(
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
                 ElevatedButton(
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
                 ElevatedButton(
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
                 ElevatedButton(
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
                 ElevatedButton(
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
                 ElevatedButton(
                     child: const Text('Back to Home'),
                     onPressed: () {
                       Navigator.pop(context);
-                    }),
+                    },),
               ],
             ),
           ),
-        ));
+        ),);
   }
 }
