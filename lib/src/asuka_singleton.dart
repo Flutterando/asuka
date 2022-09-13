@@ -57,35 +57,35 @@ class _Asuka {
         .insertAll(entries, below: below, above: above);
   }
 
-///Asuka showSnackBar
-///Asuka [showSnackBar] was implemented with the purpose of supplying the user with a complete [snackbar].
-///
-///Example:
-///
-///Controller:
-///
-///```
-///void onClickSnackbar() {
-///    asuka.showSnackBar(
-///     const SnackBar(
-///        content: Text('New Snackbar'),
-///      ),
-///    );
-/// }
-///```
-///
-///Page:
-///
-///```
-///ElevatedButton(
-///                  style: ElevatedButton.styleFrom(primary: Colors.red[300]),
-///                  onPressed: controller.onClickSnackbar,
-///                  child: const Text('Custom SnackBar'),
-///                ),
-///```
-///
-///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickSnackbar**
-///
+  ///Asuka showSnackBar
+  ///Asuka [showSnackBar] was implemented with the purpose of supplying the user with a complete [snackbar].
+  ///
+  ///Example:
+  ///
+  ///Controller:
+  ///
+  ///```
+  ///void onClickSnackbar() {
+  ///    asuka.showSnackBar(
+  ///     const SnackBar(
+  ///        content: Text('New Snackbar'),
+  ///      ),
+  ///    );
+  /// }
+  ///```
+  ///
+  ///Page:
+  ///
+  ///```
+  ///ElevatedButton(
+  ///                  style: ElevatedButton.styleFrom(primary: Colors.red[300]),
+  ///                  onPressed: controller.onClickSnackbar,
+  ///                  child: const Text('Custom SnackBar'),
+  ///                ),
+  ///```
+  ///
+  ///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickSnackbar**
+  ///
   material.ScaffoldFeatureController<material.SnackBar,
           material.SnackBarClosedReason>
       showSnackBar(material.SnackBar snackbar, {bool callback = false}) {
@@ -123,56 +123,55 @@ class _Asuka {
         .hideCurrentSnackBar(reason: reason);
   }
 
-  
-///Asuka showBottomSheet
-///
-///Asuka [showBottomSheet] was implemented with the purpose of supplying the user with a complete [bottomsheet].
-///
-///Example:
-///
-///Controller:
-///
-///```
-///asuka.showBottomSheet((context) {
-///      return Material(
-///        elevation: 7,
-///        child: SizedBox(
-///          height: MediaQuery.of(context).size.height / 2,
-///          child: ListView(
-///            children: [
-///              const ListTile(
-///                title: Text('1'),
-///              ),
-///              const ListTile(
-///                title: Text('2'),
-///              ),
-///              const ListTile(
-///                title: Text('3'),
-///              ),
-///              ListTile(
-///                title: const Text('Cancel'),
-///                onTap: () => Navigator.pop(context),
-///              ),
-///            ],
-///         ),
-///        ),
-///      );
-///   });
-///```
-///
-///Page:
-///
-///```
-///ElevatedButton(
-///                 style: ElevatedButton.styleFrom(primary: Colors.red[300]),
-///                  onPressed: () {
-///                    controller.onClickBottomSheet();
-///                  },
-///                  child: const Text('Bottom Sheet'),
-///                ),
-///```
-///
-///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickBottomSheet()**
+  ///Asuka showBottomSheet
+  ///
+  ///Asuka [showBottomSheet] was implemented with the purpose of supplying the user with a complete [bottomsheet].
+  ///
+  ///Example:
+  ///
+  ///Controller:
+  ///
+  ///```
+  ///asuka.showBottomSheet((context) {
+  ///      return Material(
+  ///        elevation: 7,
+  ///        child: SizedBox(
+  ///          height: MediaQuery.of(context).size.height / 2,
+  ///          child: ListView(
+  ///            children: [
+  ///              const ListTile(
+  ///                title: Text('1'),
+  ///              ),
+  ///              const ListTile(
+  ///                title: Text('2'),
+  ///              ),
+  ///              const ListTile(
+  ///                title: Text('3'),
+  ///              ),
+  ///              ListTile(
+  ///                title: const Text('Cancel'),
+  ///                onTap: () => Navigator.pop(context),
+  ///              ),
+  ///            ],
+  ///         ),
+  ///        ),
+  ///      );
+  ///   });
+  ///```
+  ///
+  ///Page:
+  ///
+  ///```
+  ///ElevatedButton(
+  ///                 style: ElevatedButton.styleFrom(primary: Colors.red[300]),
+  ///                  onPressed: () {
+  ///                    controller.onClickBottomSheet();
+  ///                  },
+  ///                  child: const Text('Bottom Sheet'),
+  ///                ),
+  ///```
+  ///
+  ///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickBottomSheet()**
 
   material.PersistentBottomSheetController<T> showBottomSheet<T>(
       Widget Function(BuildContext) builder,
@@ -192,61 +191,60 @@ class _Asuka {
     );
   }
 
-  
-///Asuka showModalBottomSheet
-///
-///Asuka showModalBottomSheet was implemented with the purpose of supplying the user with a complete modal bottom sheet.
-///
-///Example:
-///
-///Controller:
-///
-///```
-///asuka.showModalBottomSheet(
-///      builder: (context) => Material(
-///        borderRadius: const BorderRadius.only(
-///          topLeft: Radius.circular(16),
-///          topRight: Radius.circular(16),
-///        ),
-///        elevation: 7,
-///        child: SizedBox(
-///          height: MediaQuery.of(context).size.height / 2,
-///          child: ListView(
-///            children: [
-///              const ListTile(
-///                title: Text('Modal 1'),
-///              ),
-///              const ListTile(
-///                title: Text('Modal 2'),
-///              ),
-///              const ListTile(
-///                title: Text('Modal 3'),
-///              ),
-///              ListTile(
-///                title: const Text('Cancel'),
-///                onTap: () => Navigator.pop(context),
-///              ),
-///            ],
-///          ),
-///        ),
-///      ),
-///      backgroundColor: Colors.transparent,
-///    );
-///```
-///
-///Page:
-///
-///```
-///ElevatedButton(
-///                  style: ElevatedButton.styleFrom(primary: Colors.red[300]),
-///                  onPressed: () {
-///                    controller.onClickModalBottomSheet();
-///                  },
-///                  child: const Text('Modal Bottom Sheet'),
-///               ),
-///```
-///
-///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickModalBottomSheet();**
+  ///Asuka showModalBottomSheet
+  ///
+  ///Asuka showModalBottomSheet was implemented with the purpose of supplying the user with a complete modal bottom sheet.
+  ///
+  ///Example:
+  ///
+  ///Controller:
+  ///
+  ///```
+  ///asuka.showModalBottomSheet(
+  ///      builder: (context) => Material(
+  ///        borderRadius: const BorderRadius.only(
+  ///          topLeft: Radius.circular(16),
+  ///          topRight: Radius.circular(16),
+  ///        ),
+  ///        elevation: 7,
+  ///        child: SizedBox(
+  ///          height: MediaQuery.of(context).size.height / 2,
+  ///          child: ListView(
+  ///            children: [
+  ///              const ListTile(
+  ///                title: Text('Modal 1'),
+  ///              ),
+  ///              const ListTile(
+  ///                title: Text('Modal 2'),
+  ///              ),
+  ///              const ListTile(
+  ///                title: Text('Modal 3'),
+  ///              ),
+  ///              ListTile(
+  ///                title: const Text('Cancel'),
+  ///                onTap: () => Navigator.pop(context),
+  ///              ),
+  ///            ],
+  ///          ),
+  ///        ),
+  ///      ),
+  ///      backgroundColor: Colors.transparent,
+  ///    );
+  ///```
+  ///
+  ///Page:
+  ///
+  ///```
+  ///ElevatedButton(
+  ///                  style: ElevatedButton.styleFrom(primary: Colors.red[300]),
+  ///                  onPressed: () {
+  ///                    controller.onClickModalBottomSheet();
+  ///                  },
+  ///                  child: const Text('Modal Bottom Sheet'),
+  ///               ),
+  ///```
+  ///
+  ///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickModalBottomSheet();**
 
   Future<T?> showModalBottomSheet<T>({
     required WidgetBuilder builder,
@@ -344,18 +342,18 @@ class _Asuka {
   /// return MaterialApp(
   ///         builder: asuka.builder,
   ///         ...
-  /// 
+  ///
   /// Example:
   /// ```
-/// import 'package:asuka/asuka.dart' as asuka;
-///
-///  MaterialApp(
-///      builder: asuka.builder,
-///      navigatorObservers: [
-///         asuka.asukaHeroController //if u don`t add this Hero will not work
-///      ],
-///  );
-/// ```
+  /// import 'package:asuka/asuka.dart' as asuka;
+  ///
+  ///  MaterialApp(
+  ///      builder: asuka.builder,
+  ///      navigatorObservers: [
+  ///         asuka.asukaHeroController //if u don`t add this Hero will not work
+  ///      ],
+  ///  );
+  /// ```
 
   Widget builder(BuildContext context, Widget? child) {
     return Navigator(

@@ -56,12 +56,10 @@ packages:
   flutterando_analysis:
     dependency: "direct dev"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "6fb0089e2e603f8c87dfdc89f967b36d096e4642"
-      url: "https://github.com/Flutterando/flutterando_analysis.git"
-    source: git
-    version: "0.0.1"
+      name: flutterando_analysis
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1+1"
   matcher:
     dependency: transitive
     description:
