@@ -194,6 +194,7 @@ Flutterando Community
 
 Thank you to all the people who contributed to this project, without you, this project would not be here today.
 
+
 <a href="https://github.com/flutterando/asuka/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=flutterando/asuka" />
 </a>
@@ -211,6 +212,7 @@ Thank you to all the people who contributed to this project, without you, this p
 <p align="center">
   <a href="https://www.flutterando.com.br">
     <img width="110px" src="https://raw.githubusercontent.com/Flutterando/asuka/master/readme_assets/logo-flutterando.png">
+
   </a>
   <p align="center">
     Built and maintained by <a href="https://www.flutterando.com.br">Flutterando</a>.
