@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Asuka"),
+        title: const Text('Asuka'),
       ),
       body: ListView(
         padding: const EdgeInsets.all(20),
@@ -52,43 +52,43 @@ class _HomePageState extends State<HomePage> {
           ),
           const SizedBox(height: 10),
           ElevatedButton(
+            onPressed: homeController.onClickBottomSheet,
             child: const Text('ModalSheet'),
-            onPressed: () => homeController.onClickBottomSheet(),
           ),
           ElevatedButton(
             child: const Text('SnackBar Warning'),
             onPressed: () {
-              AsukaSnackbar.warning("Warning").show();
+              AsukaSnackbar.warning('Warning').show();
             },
           ),
           ElevatedButton(
             child: const Text('SnackBar Success'),
             onPressed: () {
-              AsukaSnackbar.success("Success").show();
+              AsukaSnackbar.success('Success').show();
             },
           ),
           ElevatedButton(
             child: const Text('SnackBar alert'),
             onPressed: () {
-              AsukaSnackbar.alert("alert").show();
+              AsukaSnackbar.alert('alert').show();
             },
           ),
           ElevatedButton(
             child: const Text('SnackBar info'),
             onPressed: () {
-              AsukaSnackbar.info("info").show();
+              AsukaSnackbar.info('info').show();
             },
           ),
           ElevatedButton(
             child: const Text('SnackBar message'),
             onPressed: () {
-              AsukaSnackbar.message("message").show();
+              AsukaSnackbar.message('message').show();
             },
           ),
           Row(
             children: [
               Hero(
-                tag: "HeroTag",
+                tag: 'HeroTag',
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
