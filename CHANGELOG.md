@@ -1,3 +1,8 @@
+## [2.0.2] - 06/02/2023.
+### Added
+* Added Cupertino Modal Popup
+* Added Cupertino Dialog
+
 ## [2.0.1+1] - 29/07/2022.
 ###  Changed
 * Doc: Updated Readme.
