@@ -11,7 +11,11 @@ void main() {
     expect(() => Asuka.removeCurrentSnackBar(), throwsAssertionError);
     expect(
         () => Asuka.showBottomSheet((e) => Container()), throwsAssertionError);
+    expect(() => Asuka.showCupertinoModalPopup(builder: (e) => Container()),
+        throwsAssertionError);
     expect(() => Asuka.showDialog(builder: (e) => Container()),
+        throwsAssertionError);
+    expect(() => Asuka.showCupertinoDialog(builder: (e) => Container()),
         throwsAssertionError);
   });
 }
