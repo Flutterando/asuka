@@ -72,7 +72,9 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
             child: const Text('SnackBar alert'),
             onPressed: () {
-              AsukaSnackbar.alert('alert').show();
+              AsukaSnackbar.alert(
+                'alert',
+              ).show();
             },
           ),
           ElevatedButton(
