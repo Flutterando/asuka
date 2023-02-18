@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
-
 <h1 align="center">ASUKA - Snackbars, Dialogs and more, the simple way.</h1>
 
 <!-- PROJECT LOGO -->
@@ -32,8 +31,8 @@
 [![Flutterando Analysis](https://img.shields.io/badge/style-flutterando__analysis-blueviolet?style=plastic)](https://pub.dev/packages/flutterando_analysis/)
 
 [![Pub Publisher](https://img.shields.io/pub/publisher/asuka?style=plastic)](https://pub.dev/publishers/flutterando.com.br/packages)
-</div>
 
+</div>
 
 <br>
 
@@ -55,8 +54,8 @@
 <br>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
 
+## About The Project
 
 <!-- PROJECT EXAMPLE (IMAGE) -->
 
@@ -69,14 +68,15 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-Asuka is a Dart package that aims to simplify and keep a clean approach when implementing some visual elements from Flutter like Snackbars, Dialogs and ModalSheets. 
-With few and intuitive lines of code you can have those in your project without the hassle of having to code them from scratch, while having the option of quickly removing them if need be. 
+Asuka is a Dart package that aims to simplify and keep a clean approach when implementing some visual elements from Flutter like Snackbars, Dialogs and ModalSheets.
+With few and intuitive lines of code you can have those in your project without the hassle of having to code them from scratch, while having the option of quickly removing them if need be.
 
 <i> This project is distributed under the MIT License. See `LICENSE.txt` for more information.</i>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SPONSORS -->
+
 ## Sponsors
 
 <a href="https://fteam.dev">
@@ -86,25 +86,26 @@ With few and intuitive lines of code you can have those in your project without 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get Asuka in your project follow either of the instructions below:
 
 a) Add Asuka as a dependency in your Pubspec.yaml:
- ```yaml
-   dependencies:
-     asuka: any
-``` 
+
+```yaml
+dependencies:
+  asuka: any
+```
 
 b) Use Dart Pub:
+
 ```sh
   dart pub add asuka
 ```
 
 <br>
-
 
 ## How to Use
 
@@ -119,8 +120,9 @@ MaterialApp(
        Asuka.asukaHeroController //This line is needed for the Hero widget to work
     ],
 );
-``` 
-Now you just have to call the named constructors for each widget that you want to use: 
+```
+
+Now you just have to call the named constructors for each widget that you want to use:
 
 ```dart
 import 'package:asuka/asuka.dart';
@@ -138,32 +140,32 @@ _For more examples, please refer to the_ [Documentation](https://pub.dev/documen
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-
 <!-- FEATURES -->
+
 ## Features
 
 - ✅ Snackbars
 - ✅ Dialog
 - ✅ BottomSheet
 - ✅ ModalBottomSheet
-- ✅ Overlay 
+- ✅ CupertinoModalPopup
+- ✅ CupertinoDialog
+- ✅ CupertinoDialogListener
+- ✅ Overlay
 
-Right now this package has concluded all his intended features. If you have any suggestions or find something to report, see below how to contribute to it. 
+Right now this package has concluded all his intended features. If you have any suggestions or find something to report, see below how to contribute to it.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
- 
+
 <!-- 🚧 [Contributing Guidelines]() - _Work in Progress_ 🚧 -->
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the appropriate tag. 
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the appropriate tag.
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
@@ -172,28 +174,29 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-Remember to include a tag, and to follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) and [Semantic Versioning](https://semver.org/) when uploading your commit and/or creating the issue. 
+Remember to include a tag, and to follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) and [Semantic Versioning](https://semver.org/) when uploading your commit and/or creating the issue.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
+
 ## Contact
 
 Flutterando Community
+
 - [Discord](https://discord.gg/qNBDHNARja)
 - [Telegram](https://t.me/flutterando)
 - [Website](https://www.flutterando.com.br)
 - [Youtube Channel](https://www.youtube.com.br/flutterando)
 - [Other useful links](https://linktr.ee/flutterando)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements 
+
+## Acknowledgements
 
 Thank you to all the people who contributed to this project, without you, this project would not be here today.
-
 
 <a href="https://github.com/flutterando/asuka/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=flutterando/asuka" />
@@ -201,10 +204,10 @@ Thank you to all the people who contributed to this project, without you, this p
 <!-- Bot para Lista de contribuidores - https://allcontributors.org/  -->
 <!-- Opção (utilizada no momento): https://contrib.rocks/preview?repo=flutterando%2Fasuka -->
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MANTAINED BY -->
+
 ## Maintaned by
 
 <br>

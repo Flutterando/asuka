@@ -7,7 +7,7 @@ import 'second/second_page.dart';
 class HomePage extends StatefulWidget {
   final String title;
 
-  const HomePage({Key key, this.title}) : super(key: key);
+  const HomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -33,7 +33,9 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const SecondPage(),
+                  builder: (context) => const SecondPage(
+                    title: 'Second Page',
+                  ),
                 ),
               );
             },
@@ -102,10 +104,8 @@ class _HomePageState extends State<HomePage> {
           ),
           const TextField(),
           ElevatedButton(
+            onPressed: homeController.onClickModalBottomSheet,
             child: const Text('Show Modal Bottom Sheet'),
-            onPressed: () {
-              homeController.onClickModalBottomSheet();
-            },
           ),
         ],
       ),

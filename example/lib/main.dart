@@ -9,7 +9,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,9 @@ class MyApp extends StatelessWidget {
       ),
       builder: Asuka.builder,
       initialRoute: '/',
-      navigatorObservers: [Asuka.asukaHeroController],
+      navigatorObservers: [
+        Asuka.asukaHeroController
+      ],
       routes: {
         '/': (_) => const HomePage(title: 'Asuka'),
         '/second': (_) => const SecondPage(title: 'Second page'),
