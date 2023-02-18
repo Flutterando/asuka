@@ -1,3 +1,6 @@
+## [2.0.2] - 17/02/2023.
+###  Fix
+* Remove deprecated symbols for flutter 3.7
 ## [2.0.1+1] - 29/07/2022.
 ###  Changed
 * Doc: Updated Readme.

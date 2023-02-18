@@ -38,7 +38,7 @@ class _Asuka {
     if (callback) _checkAndInvokeCallback();
     if (_keyScaff.currentContext != null) {
       OverlayState? overlay = Overlay.of(_keyScaff.currentContext!);
-      overlay?.insert(entry, below: below, above: above);
+      overlay.insert(entry, below: below, above: above);
     }
   }
 
@@ -53,7 +53,7 @@ class _Asuka {
       {OverlayEntry? below, OverlayEntry? above, bool callback = false}) {
     _checkBuilderIsInMaterialApp();
     if (callback) _checkAndInvokeCallback();
-    Overlay.of(_keyScaff.currentContext!)!
+    Overlay.of(_keyScaff.currentContext!)
         .insertAll(entries, below: below, above: above);
   }
 
