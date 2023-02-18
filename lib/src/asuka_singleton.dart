@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart' as cupertino;
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/material.dart';
 
@@ -279,6 +282,71 @@ class _Asuka {
     );
   }
 
+  ///Asuka showCupertinoModalPopup
+  ///
+  ///Asuka showCupertinoModalPopup was implemented with the purpose of supplying the user with a complete cupertino modal popup.
+  ///
+  ///Example:
+  ///
+  ///Controller:
+  ///
+  ///```
+  ///asuka.showCupertinoModalPopup(
+  ///      builder: (context) => CupertinoActionSheet(
+  ///        title: const Text("Cupertino Action Sheet"),
+  ///        actions: [
+  ///          CupertinoActionSheetAction(
+  ///            child: const Text('Action 1'),
+  ///            onPressed: () {},
+  ///          ),
+  ///          CupertinoActionSheetAction(
+  ///            child: const Text('Action 2'),
+  ///            onPressed: () {},
+  ///          ),
+  ///        ],
+  ///        cancelButton: CupertinoActionSheetAction(
+  ///          child: const Text('Cancel'),
+  ///          onPressed: () => Navigator.pop(context),
+  ///        ),
+  ///      ),
+  ///    );
+  ///```
+  ///
+  ///Page:
+  ///
+  ///```
+  ///ElevatedButton(
+  ///   style: ElevatedButton.styleFrom(primary: Colors.red[300]),
+  ///   onPressed: () {
+  ///     controller.onClickModalBottomSheet();
+  ///   },
+  ///   child: const Text('Cupertino Popup'),
+  ///),
+  ///```
+  ///
+  ///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickModalBottomSheet();**
+
+  Future<T?> showCupertinoModalPopup<T>({
+    required WidgetBuilder builder,
+    ImageFilter? filter,
+    Color barrierColor = cupertino.kCupertinoModalBarrierColor,
+    bool barrierDismissible = true,
+    bool useRootNavigator = true,
+    bool? semanticsDismissible,
+    RouteSettings? routeSettings,
+  }) {
+    return cupertino.showCupertinoModalPopup<T>(
+      context: _keyScaff.currentState!.context,
+      builder: builder,
+      filter: filter,
+      barrierColor: barrierColor,
+      barrierDismissible: barrierDismissible,
+      useRootNavigator: useRootNavigator,
+      semanticsDismissible: semanticsDismissible,
+      routeSettings: routeSettings,
+    );
+  }
+
   /// Asuka showDialog
   ///
   /// Asuka [showDialog] was implemented with the purpose of supplying the user with a [dialog].
@@ -333,6 +401,63 @@ class _Asuka {
       builder: builder,
       barrierDismissible: barrierDismissible,
       barrierColor: barrierColor,
+      useSafeArea: useSafeArea,
+      routeSettings: routeSettings,
+    );
+  }
+
+  /// Asuka showCupertinoDialog
+  ///
+  /// Asuka [showCupertinoDialog] was implemented with the purpose of supplying the user with a [dialog].
+  ///
+  ///Example:
+  ///
+  /// Controller:
+  ///```
+  /// asuka.showCupertinoDialog(
+  ///       builder: (context) => CupertinoAlertDialog(
+  ///         title: const Text('Dialog'),
+  ///         content: const Text('This is a custom Dialog '),
+  ///         actions: [
+  ///           CupertinoDialogAction(
+  ///             onPressed: () {
+  ///               Navigator.pop(context);
+  ///             },
+  ///             child: const Text('Cancel'),
+  ///           ),
+  ///           CupertinoDialogAction(
+  ///             onPressed: () {
+  ///               Navigator.pop(context);
+  ///             },
+  ///             child: const Text('Ok'),
+  ///           ),
+  ///         ],
+  ///       ),
+  ///     );
+  ///```
+  ///Page:
+  ///
+  ///```
+  ///ElevatedButton(
+  /// style: ElevatedButton.styleFrom(primary: Colors.red[300]),
+  /// onPressed: controller.onClickDialog,
+  /// child: const Text('Cupertino Dialog'),
+  ///  ),
+  ///```
+  ///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickDialog**
+
+  Future<T?> showCupertinoDialog<T>(
+      {required WidgetBuilder builder,
+      bool barrierDismissible = true,
+      bool useSafeArea = true,
+      bool useRootNavigator = true,
+      RouteSettings? routeSettings,
+      bool callback = false}) {
+    _checkBuilderIsInMaterialApp();
+    if (callback) _checkAndInvokeCallback();
+    return _dialogs!.showCupertinoDialogListener(
+      builder: builder,
+      barrierDismissible: barrierDismissible,
       useSafeArea: useSafeArea,
       routeSettings: routeSettings,
     );
@@ -411,6 +536,22 @@ class __BuildPageState extends State<_BuildPage> implements _ListenerInterface {
       routeSettings: routeSettings,
     );
   }
+
+  @override
+  Future<T?> showCupertinoDialogListener<T>(
+      {required WidgetBuilder builder,
+      bool barrierDismissible = true,
+      bool useSafeArea = true,
+      bool useRootNavigator = true,
+      cupertino.RouteSettings? routeSettings}) {
+    return cupertino.showCupertinoDialog(
+      context: context,
+      builder: builder,
+      useRootNavigator: useRootNavigator,
+      barrierDismissible: barrierDismissible,
+      routeSettings: routeSettings,
+    );
+  }
 }
 
 abstract class _ListenerInterface {
@@ -418,6 +559,14 @@ abstract class _ListenerInterface {
     required WidgetBuilder builder,
     bool barrierDismissible = true,
     Color? barrierColor,
+    bool useSafeArea = true,
+    bool useRootNavigator = true,
+    RouteSettings? routeSettings,
+  });
+
+  Future<T?> showCupertinoDialogListener<T>({
+    required WidgetBuilder builder,
+    bool barrierDismissible = true,
     bool useSafeArea = true,
     bool useRootNavigator = true,
     RouteSettings? routeSettings,
