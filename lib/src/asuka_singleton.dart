@@ -390,7 +390,7 @@ class _Asuka {
   Future<T?> showDialog<T>(
       {required WidgetBuilder builder,
       bool barrierDismissible = true,
-      Color? barrierColor,
+      Color? barrierColor = Colors.black54,
       bool useSafeArea = true,
       bool useRootNavigator = true,
       RouteSettings? routeSettings,
