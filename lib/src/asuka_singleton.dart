@@ -558,7 +558,7 @@ abstract class _ListenerInterface {
   Future<T?> showDialogListener<T>({
     required WidgetBuilder builder,
     bool barrierDismissible = true,
-    Color? barrierColor,
+    Color? barrierColor = Colors.black54,
     bool useSafeArea = true,
     bool useRootNavigator = true,
     RouteSettings? routeSettings,
