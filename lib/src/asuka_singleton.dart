@@ -332,7 +332,7 @@ class _Asuka {
     Color barrierColor = cupertino.kCupertinoModalBarrierColor,
     bool barrierDismissible = true,
     bool useRootNavigator = true,
-    bool? semanticsDismissible,
+    bool semanticsDismissible = false,
     RouteSettings? routeSettings,
   }) {
     return cupertino.showCupertinoModalPopup<T>(
