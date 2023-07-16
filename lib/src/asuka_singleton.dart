@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:asuka/enums/asuka_vertical_position.dart';
+import 'package:asuka/extensions/snack_bar_extension.dart';
 import 'package:flutter/cupertino.dart' as cupertino;
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/material.dart';
@@ -91,11 +93,18 @@ class _Asuka {
   ///
   material.ScaffoldFeatureController<material.SnackBar,
           material.SnackBarClosedReason>
-      showSnackBar(material.SnackBar snackbar, {bool callback = false}) {
+      showSnackBar(material.SnackBar snackbar,
+          {bool callback = false,
+          AsukaVerticalPosition verticalPosition = AsukaVerticalPosition.bottom,
+          double top = 100}) {
     _checkBuilderIsInMaterialApp();
     if (callback) _checkAndInvokeCallback();
+
     return ScaffoldMessenger.of(_keyScaff.currentState!.context)
-        .showSnackBar(snackbar);
+        .showSnackBar(snackbar.applyVerticalPosition(
+      verticalPosition,
+      top: MediaQuery.sizeOf(_keyScaff.currentState!.context).height - top,
+    ));
   }
 
   /// Removes the current [SnackBar] (if any) immediately.
