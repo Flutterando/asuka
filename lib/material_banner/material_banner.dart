@@ -12,7 +12,6 @@ import '../widgets/asuka_content_widget.dart';
 ///For an example on how to use it, please check the [example] folder.
 
 class AsukaMaterialBanner extends MaterialBanner {
-  Timer? _timer;
   final Duration? duration;
 
   /// Inherits and implements the [MaterialBanner] from flutter material package.
@@ -221,9 +220,8 @@ class AsukaMaterialBanner extends MaterialBanner {
   void call() => show();
 
   void show() {
-    _timer?.cancel();
     if (duration != null) {
-      _timer = Timer(duration!, () {
+      Timer(duration!, () {
         Asuka.hideCurrentMaterialBanner();
       });
     }
