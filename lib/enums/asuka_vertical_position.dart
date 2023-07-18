@@ -1,1 +1,0 @@
-enum AsukaVerticalPosition { top, bottom }

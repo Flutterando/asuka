@@ -1,14 +1,15 @@
 import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 
+import '../core/consts.dart';
+import '../enums/asuka_type_enum.dart';
+import '../widgets/asuka_content_widget.dart';
+
 ///Defines the layout and behavior of a [AsukaSnackbar].
 ///
 ///For an example on how to use it, please check the [example] folder.
 
 class AsukaSnackbar extends SnackBar {
-  final AsukaVerticalPosition verticalPosition;
-  final double top;
-
   /// Inherits and implements the [SnackBar] from flutter material package.
   /// Creates a private named constructor.
   /// Adds a [Key] to [AsukaSnackbar], but it's not required.
@@ -37,15 +38,11 @@ class AsukaSnackbar extends SnackBar {
     Key? key,
     String content,
     Color background, {
-    AsukaVerticalPosition? verticalPosition,
-    double? top,
     IconData? icon,
     SnackBarAction? action,
     double? width,
     double elevation = 2,
-  })  : verticalPosition = verticalPosition ?? AsukaVerticalPosition.bottom,
-        top = top ?? 100,
-        super(
+  }) : super(
           width: width,
           elevation: elevation,
           backgroundColor: background,
@@ -55,36 +52,12 @@ class AsukaSnackbar extends SnackBar {
               4,
             ),
           ),
-          margin: EdgeInsets.only(
-            bottom: 800,
-          ),
           behavior: SnackBarBehavior.floating,
-          content: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (icon != null) ...[
-                Icon(
-                  icon,
-                  size: 20,
-                  color: Colors.black45,
-                ),
-                SizedBox(width: 10)
-              ],
-              Expanded(
-                child: Text(
-                  content,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              if (action == null)
-                InkWell(
-                  child: Icon(Icons.close, color: Colors.white),
-                  onTap: Asuka.hideCurrentSnackBar, //
-                )
-            ],
+          content: AsukaContentWidget(
+            icon: icon,
+            content: content,
+            actions: action == null ? null : [action],
+            type: AsukaType.snackbar,
           ),
         );
 
@@ -108,16 +81,14 @@ class AsukaSnackbar extends SnackBar {
     Key? key,
     double? width,
     double elevation = 2,
-    double? top,
   }) =>
       AsukaSnackbar._(
         key,
         content,
-        Color(0xFFE6CA72),
-        icon: Icons.warning,
+        warningConfig.color,
+        icon: warningConfig.icon,
         width: width,
         elevation: elevation,
-        top: top,
       );
 
   ///Creates a subclass of [AsukaSnackbar] called [AsukaSnackbar.Alert]
@@ -140,16 +111,14 @@ class AsukaSnackbar extends SnackBar {
     Key? key,
     double? width,
     double elevation = 2,
-    double? top,
   }) =>
       AsukaSnackbar._(
         key,
         content,
-        Color(0xffFA5456),
-        icon: Icons.report,
+        alertConfig.color,
+        icon: alertConfig.icon,
         width: width,
         elevation: elevation,
-        top: top,
       );
 
   ///Creates a subclass of [AsukaSnackbar] called [AsukaSnackbar.Info]
@@ -173,19 +142,15 @@ class AsukaSnackbar extends SnackBar {
     SnackBarAction? snackBarAction,
     double? width,
     double elevation = 2,
-    double? top,
-    AsukaVerticalPosition verticalPosition = AsukaVerticalPosition.bottom,
   }) =>
       AsukaSnackbar._(
         key,
         content,
-        Color(0xff3196DA),
+        infoConfig.color,
         action: snackBarAction,
-        icon: Icons.help,
+        icon: infoConfig.icon,
         width: width,
         elevation: elevation,
-        verticalPosition: verticalPosition,
-        top: top,
       );
 
   ///Creates a subclass of [AsukaSnackbar] called [AsukaSnackbar.Success]
@@ -209,19 +174,15 @@ class AsukaSnackbar extends SnackBar {
     SnackBarAction? snackBarAction,
     double? width,
     double elevation = 2,
-    double? top,
-    AsukaVerticalPosition verticalPosition = AsukaVerticalPosition.bottom,
   }) =>
       AsukaSnackbar._(
         key,
         content,
-        Color(0xFF80AD49),
+        successConfig.color,
         action: snackBarAction,
-        icon: Icons.check_circle,
+        icon: successConfig.icon,
         width: width,
         elevation: elevation,
-        verticalPosition: verticalPosition,
-        top: top,
       );
 
   ///Creates a subclass of [AsukaSnackbar] called [AsukaSnackbar.Message]
@@ -244,24 +205,16 @@ class AsukaSnackbar extends SnackBar {
     Key? key,
     double? width,
     double elevation = 2,
-    AsukaVerticalPosition verticalPosition = AsukaVerticalPosition.bottom,
-    double? top,
   }) =>
       AsukaSnackbar._(
         key,
         content,
-        Color(0xff484848),
+        messageConfig.color,
         width: width,
         elevation: elevation,
-        verticalPosition: verticalPosition,
-        top: top,
       );
 
   void call() => show();
 
-  void show() => Asuka.showSnackBar(
-        this,
-        verticalPosition: verticalPosition,
-        top: top,
-      );
+  void show() => Asuka.showSnackBar(this);
 }
