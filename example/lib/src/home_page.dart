@@ -1,4 +1,4 @@
-import 'package:asuka/snackbars/asuka_snack_bar.dart';
+import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 
 import 'home.controller.dart';
@@ -87,6 +87,46 @@ class _HomePageState extends State<HomePage> {
             child: const Text('SnackBar message'),
             onPressed: () {
               AsukaSnackbar.message('message').show();
+            },
+          ),
+          ElevatedButton(
+            onPressed: homeController.onClickMaterialBanner,
+            child: const Text('MaterialBanner'),
+          ),
+          const SizedBox(height: 10),
+          ElevatedButton(
+            child: const Text('Material Banner Warning'),
+            onPressed: () {
+              AsukaMaterialBanner.warning('Warning').show();
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Material Banner Success'),
+            onPressed: () {
+              AsukaMaterialBanner.success('Success').show();
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Material Banner alert'),
+            onPressed: () {
+              AsukaMaterialBanner.alert(
+                'alert',
+              ).show();
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Material Banner info'),
+            onPressed: () {
+              AsukaMaterialBanner.info('info').show();
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Material Banner message'),
+            onPressed: () {
+              AsukaMaterialBanner.message(
+                'message',
+                duration: null,
+              ).show();
             },
           ),
           Row(

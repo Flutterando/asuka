@@ -318,6 +318,133 @@ void main() {
       expect(textFinder, findsOneWidget);
     },
   );
+
+  testWidgets(
+    'MaterialBanner.warning appears',
+    (tester) async {
+      const content = 'test';
+      await tester.pumpWidget(
+        showMaterialBanner(AsukaMaterialBanner.warning('test'), 'Warning'),
+      );
+
+      // Create the Finders.
+      final btnFinder = find.text('Warning');
+      await tester.tap(btnFinder);
+      final textFinder = find.text(content);
+      await tester.pumpAndSettle();
+      expect(textFinder, findsOneWidget);
+    },
+  );
+  testWidgets(
+    'MaterialBanner.success appears',
+    (tester) async {
+      const content = 'test';
+      await tester.pumpWidget(
+        showMaterialBanner(AsukaMaterialBanner.success('test'), 'Success'),
+      );
+
+      // Create the Finders.
+      final btnFinder = find.text('Success');
+      await tester.tap(btnFinder);
+      final textFinder = find.text(content);
+      await tester.pumpAndSettle();
+      expect(textFinder, findsOneWidget);
+    },
+  );
+  testWidgets(
+    'MaterialBanner.alert appears',
+    (tester) async {
+      const content = 'test';
+      await tester.pumpWidget(
+        showMaterialBanner(AsukaMaterialBanner.alert('test'), 'Alert'),
+      );
+
+      // Create the Finders.
+      final btnFinder = find.text('Alert');
+      await tester.tap(btnFinder);
+      final textFinder = find.text(content);
+      await tester.pumpAndSettle();
+      expect(textFinder, findsOneWidget);
+    },
+  );
+  testWidgets(
+    'MaterialBanner.info appears',
+    (tester) async {
+      const content = 'test';
+      await tester.pumpWidget(
+        showMaterialBanner(AsukaMaterialBanner.info('test'), 'Info'),
+      );
+
+      // Create the Finders.
+      final btnFinder = find.text('Info');
+      await tester.tap(btnFinder);
+      final textFinder = find.text(content);
+      await tester.pumpAndSettle();
+      expect(textFinder, findsOneWidget);
+    },
+  );
+  testWidgets(
+    'MaterialBanner.message appears',
+    (tester) async {
+      const content = 'test';
+      await tester.pumpWidget(
+        showMaterialBanner(
+          AsukaMaterialBanner.message('test'),
+          'Message',
+        ),
+      );
+
+      // Create the Finders.
+      final btnFinder = find.text('Message');
+      await tester.tap(btnFinder);
+      final textFinder = find.text(content);
+      await tester.pumpAndSettle();
+      expect(textFinder, findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'controller.onClickMaterialBanner appears',
+    (tester) async {
+      const content = 'New MaterialBanner';
+      await tester.pumpWidget(
+        MaterialApp(
+          builder: Asuka.builder,
+          home: Scaffold(
+            backgroundColor: const Color.fromARGB(255, 230, 227, 227),
+            body: Builder(
+              builder: (context) {
+                return Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[900],
+                    ),
+                    onPressed: () {
+                      controller.onClickMaterialBanner;
+                      Asuka.showMaterialBanner(
+                        const MaterialBanner(
+                          content: Text('New MaterialBanner'),
+                          actions: [SizedBox.shrink()],
+                        ),
+                      );
+                    },
+                    child: const Text('Custom MaterialBanner'),
+                  ),
+                );
+              },
+            ),
+          ),
+        ),
+      );
+
+      // Create the Finders.
+      final btnFinder = find.text('Custom MaterialBanner');
+      await tester.tap(btnFinder);
+      final textFinder = find.text(content);
+      await tester.pumpAndSettle();
+      expect(textFinder, findsOneWidget);
+    },
+  );
 }
 
 MaterialApp showSnackbar(AsukaSnackbar asukaSnackbar, String buttonText) {
@@ -334,6 +461,33 @@ MaterialApp showSnackbar(AsukaSnackbar asukaSnackbar, String buttonText) {
               ),
               onPressed: () {
                 asukaSnackbar.show();
+              },
+              child: Text(buttonText),
+            ),
+          );
+        },
+      ),
+    ),
+  );
+}
+
+MaterialApp showMaterialBanner(
+  AsukaMaterialBanner asukaMaterialBanner,
+  String buttonText,
+) {
+  return MaterialApp(
+    builder: Asuka.builder,
+    home: Scaffold(
+      backgroundColor: const Color.fromARGB(255, 230, 227, 227),
+      body: Builder(
+        builder: (context) {
+          return Center(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.grey[900],
+              ),
+              onPressed: () {
+                asukaMaterialBanner.show();
               },
               child: Text(buttonText),
             ),
