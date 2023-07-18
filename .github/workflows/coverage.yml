@@ -19,7 +19,7 @@ jobs:
         java-version: '11.0'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '3.7.3'
+        flutter-version: '3.7.6'
     
     - name: get packages
       run: flutter pub get
