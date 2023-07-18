@@ -34,7 +34,6 @@ class AsukaMaterialBanner extends MaterialBanner {
     IconData? icon,
     List<Widget>? actions,
     double elevation = 2,
-    double margin = 10,
   })  : duration = duration,
         super(
           actions: actions ??
@@ -43,7 +42,6 @@ class AsukaMaterialBanner extends MaterialBanner {
               ],
           overflowAlignment: OverflowBarAlignment.start,
           elevation: elevation,
-          margin: EdgeInsets.all(margin),
           backgroundColor: background,
           content: AsukaContentWidget(
             icon: icon,
@@ -72,7 +70,6 @@ class AsukaMaterialBanner extends MaterialBanner {
     String content, {
     Key? key,
     double elevation = 2,
-    double margin = 10,
     Duration? duration = const Duration(seconds: 4),
   }) =>
       AsukaMaterialBanner._(
@@ -81,7 +78,6 @@ class AsukaMaterialBanner extends MaterialBanner {
         warningConfig.color,
         icon: warningConfig.icon,
         elevation: elevation,
-        margin: margin,
         duration: duration,
       );
 
@@ -105,7 +101,6 @@ class AsukaMaterialBanner extends MaterialBanner {
     Key? key,
     double? width,
     double elevation = 2,
-    double margin = 10,
     Duration? duration = const Duration(seconds: 4),
   }) =>
       AsukaMaterialBanner._(
@@ -114,7 +109,6 @@ class AsukaMaterialBanner extends MaterialBanner {
         alertConfig.color,
         icon: alertConfig.icon,
         elevation: elevation,
-        margin: margin,
         duration: duration,
       );
 
@@ -138,7 +132,6 @@ class AsukaMaterialBanner extends MaterialBanner {
     Key? key,
     List<Widget>? actions,
     double elevation = 2,
-    double margin = 10,
     Duration? duration = const Duration(seconds: 4),
   }) =>
       AsukaMaterialBanner._(
@@ -148,7 +141,6 @@ class AsukaMaterialBanner extends MaterialBanner {
         actions: actions,
         icon: infoConfig.icon,
         elevation: elevation,
-        margin: margin,
         duration: duration,
       );
 
@@ -172,7 +164,6 @@ class AsukaMaterialBanner extends MaterialBanner {
     Key? key,
     List<Widget>? actions,
     double elevation = 2,
-    double margin = 10,
     Duration? duration = const Duration(seconds: 4),
   }) =>
       AsukaMaterialBanner._(
@@ -182,7 +173,6 @@ class AsukaMaterialBanner extends MaterialBanner {
         actions: actions,
         icon: successConfig.icon,
         elevation: elevation,
-        margin: margin,
         duration: duration,
       );
 
@@ -205,7 +195,6 @@ class AsukaMaterialBanner extends MaterialBanner {
     String content, {
     Key? key,
     double elevation = 2,
-    double margin = 10,
     Duration? duration = const Duration(seconds: 4),
   }) =>
       AsukaMaterialBanner._(
@@ -213,7 +202,6 @@ class AsukaMaterialBanner extends MaterialBanner {
         content,
         messageConfig.color,
         elevation: elevation,
-        margin: margin,
         duration: duration,
       );
 
