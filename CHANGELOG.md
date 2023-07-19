@@ -1,6 +1,6 @@
 ## [2.2.0] - 19/07/2023.
 
-- Adding Suport do Material Banner
+- Adding Suport to Material Banner
 
 ### Example
 ```
@@ -36,7 +36,7 @@ const MaterialBanner(
 ## [2.0.1+1] - 29/07/2022.
 
 ### Changed
-
+ 
 - Doc: Updated Readme.
 
 ## [2.0.1] - 29/07/2022.
