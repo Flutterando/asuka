@@ -4,17 +4,19 @@
 
 ### Example
 ```
-const MaterialBanner(
-  overflowAlignment: OverflowBarAlignment.start,
-  backgroundColor: Colors.red,
-  elevation: 1,
-  content: AsukaContentWidget(
-    icon: Icons.report,
-    content: 'This is a Material Banner',
-    actions: [],
-    type: AsukaType.materialBanner,
+Asuka.showMaterialBanner(
+  const MaterialBanner(
+    overflowAlignment: OverflowBarAlignment.start,
+    backgroundColor: Colors.red,
+    elevation: 1,
+    content: AsukaContentWidget(
+      icon: Icons.report,
+      content: 'This is a Material Banner',
+      actions: [],
+      type: AsukaType.materialBanner,
+    ),
+    actions: [SizedBox.shrink()],
   ),
-  actions: [SizedBox.shrink()],
 )
 ```
 ## [2.1.0] - 19/05/2023.
