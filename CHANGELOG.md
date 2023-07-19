@@ -1,3 +1,22 @@
+## [2.2.0] - 19/07/2023.
+
+- Adding Suport do Material Banner
+
+### Example
+```
+const MaterialBanner(
+  overflowAlignment: OverflowBarAlignment.start,
+  backgroundColor: Colors.red,
+  elevation: 1,
+  content: AsukaContentWidget(
+    icon: Icons.report,
+    content: 'This is a Material Banner',
+    actions: [],
+    type: AsukaType.materialBanner,
+  ),
+  actions: [SizedBox.shrink()],
+)
+```
 ## [2.1.0] - 19/05/2023.
 
 - Support for flutter 3.10
