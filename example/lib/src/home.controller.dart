@@ -1,9 +1,28 @@
 import 'package:asuka/asuka.dart';
+import 'package:asuka/enums/asuka_type_enum.dart';
+import 'package:asuka/widgets/asuka_content_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeController {
   void onClickSnackbar() {
     Asuka.showSnackBar(const SnackBar(content: Text('New snackBar!!!')));
+  }
+
+  void onClickMaterialBanner() {
+    Asuka.showMaterialBanner(
+      const MaterialBanner(
+        overflowAlignment: OverflowBarAlignment.start,
+        backgroundColor: Colors.red,
+        elevation: 1,
+        content: AsukaContentWidget(
+          icon: Icons.report,
+          content: 'This is a Material Banner',
+          actions: [],
+          type: AsukaType.materialBanner,
+        ),
+        actions: [SizedBox.shrink()],
+      ),
+    );
   }
 
   void onClickDialog() {

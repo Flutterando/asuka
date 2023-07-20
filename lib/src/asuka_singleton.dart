@@ -52,8 +52,12 @@ class _Asuka {
   /// Otherwise, the entries are inserted on top.
   ///
   /// It is an error to specify both `above` and `below`.
-  void ainsertAllOverlay(Iterable<OverlayEntry> entries,
-      {OverlayEntry? below, OverlayEntry? above, bool callback = false}) {
+  void ainsertAllOverlay(
+    Iterable<OverlayEntry> entries, {
+    OverlayEntry? below,
+    OverlayEntry? above,
+    bool callback = false,
+  }) {
     _checkBuilderIsInMaterialApp();
     if (callback) _checkAndInvokeCallback();
     Overlay.of(_keyScaff.currentContext!)
@@ -90,10 +94,13 @@ class _Asuka {
   ///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickSnackbar**
   ///
   material.ScaffoldFeatureController<material.SnackBar,
-          material.SnackBarClosedReason>
-      showSnackBar(material.SnackBar snackbar, {bool callback = false}) {
+      material.SnackBarClosedReason> showSnackBar(
+    material.SnackBar snackbar, {
+    bool callback = false,
+  }) {
     _checkBuilderIsInMaterialApp();
     if (callback) _checkAndInvokeCallback();
+
     return ScaffoldMessenger.of(_keyScaff.currentState!.context)
         .showSnackBar(snackbar);
   }
@@ -102,10 +109,10 @@ class _Asuka {
   ///
   /// The removed snack bar does not run its normal exit animation. If there are
   /// any queued snack bars, they begin their entrance animation immediately.
-  void removeCurrentSnackBar(
-      {material.SnackBarClosedReason reason =
-          material.SnackBarClosedReason.remove,
-      bool callback = false}) {
+  void removeCurrentSnackBar({
+    material.SnackBarClosedReason reason = material.SnackBarClosedReason.remove,
+    bool callback = false,
+  }) {
     _checkBuilderIsInMaterialApp();
     if (callback) _checkAndInvokeCallback();
     return ScaffoldMessenger.of(_keyScaff.currentState!.context)
@@ -115,10 +122,10 @@ class _Asuka {
   /// Removes the current [SnackBar] by running its normal exit animation.
   ///
   /// The closed completer is called after the animation is complete.
-  void hideCurrentSnackBar(
-      {material.SnackBarClosedReason reason =
-          material.SnackBarClosedReason.remove,
-      bool callback = false}) {
+  void hideCurrentSnackBar({
+    material.SnackBarClosedReason reason = material.SnackBarClosedReason.remove,
+    bool callback = false,
+  }) {
     _checkBuilderIsInMaterialApp();
     if (callback) _checkAndInvokeCallback();
     //return _keyScaff.currentState!.hideCurrentSnackBar(reason: reason);
@@ -463,6 +470,48 @@ class _Asuka {
     );
   }
 
+  material.ScaffoldFeatureController<material.MaterialBanner,
+      material.MaterialBannerClosedReason> showMaterialBanner(
+    material.MaterialBanner materialBanner, {
+    bool callback = false,
+  }) {
+    _checkBuilderIsInMaterialApp();
+    if (callback) _checkAndInvokeCallback();
+
+    return ScaffoldMessenger.of(_keyScaff.currentState!.context)
+        .showMaterialBanner(materialBanner);
+  }
+
+  /// Removes the current [SnackBar] (if any) immediately.
+  ///
+  /// The removed snack bar does not run its normal exit animation. If there are
+  /// any queued snack bars, they begin their entrance animation immediately.
+  void removeCurrentMaterialBanner({
+    material.MaterialBannerClosedReason reason =
+        material.MaterialBannerClosedReason.remove,
+    bool callback = false,
+  }) {
+    _checkBuilderIsInMaterialApp();
+    if (callback) _checkAndInvokeCallback();
+    return ScaffoldMessenger.of(_keyScaff.currentState!.context)
+        .removeCurrentMaterialBanner(reason: reason);
+  }
+
+  /// Removes the current [SnackBar] by running its normal exit animation.
+  ///
+  /// The closed completer is called after the animation is complete.
+  void hideCurrentMaterialBanner({
+    material.MaterialBannerClosedReason reason =
+        material.MaterialBannerClosedReason.remove,
+    bool callback = false,
+  }) {
+    _checkBuilderIsInMaterialApp();
+    if (callback) _checkAndInvokeCallback();
+    //return _keyScaff.currentState!.hideCurrentSnackBar(reason: reason);
+    return ScaffoldMessenger.of(_keyScaff.currentState!.context)
+        .hideCurrentMaterialBanner(reason: reason);
+  }
+
   /// init Asuka: Add in your MaterialApp
   /// return MaterialApp(
   ///         builder: asuka.builder,
@@ -531,7 +580,6 @@ class __BuildPageState extends State<_BuildPage> implements _ListenerInterface {
       builder: builder,
       barrierDismissible: barrierDismissible,
       barrierColor: barrierColor,
-      //useSafeArea: useSafeArea,
       useRootNavigator: useRootNavigator,
       routeSettings: routeSettings,
     );

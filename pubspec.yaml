@@ -4,17 +4,15 @@ version: 2.1.0
 homepage: https://github.com/Flutterando/asuka
 
 environment:
-  sdk: ">=2.19.2 <4.0.0"
+  sdk: '>=2.19.3 <4.0.0'
 
-dependencies:    
+dependencies:
   flutter:
-    sdk:  flutter
-  
-    
+    sdk: flutter
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutterando_analysis: ^0.0.2
-  
 
 flutter:

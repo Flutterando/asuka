@@ -1,6 +1,10 @@
 import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 
+import '../core/consts.dart';
+import '../enums/asuka_type_enum.dart';
+import '../widgets/asuka_content_widget.dart';
+
 ///Defines the layout and behavior of a [AsukaSnackbar].
 ///
 ///For an example on how to use it, please check the [example] folder.
@@ -49,32 +53,11 @@ class AsukaSnackbar extends SnackBar {
             ),
           ),
           behavior: SnackBarBehavior.floating,
-          content: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (icon != null) ...[
-                Icon(
-                  icon,
-                  size: 20,
-                  color: Colors.black45,
-                ),
-                SizedBox(width: 10)
-              ],
-              Expanded(
-                child: Text(
-                  content,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              if (action == null)
-                InkWell(
-                  child: Icon(Icons.close, color: Colors.white),
-                  onTap: Asuka.hideCurrentSnackBar, //
-                )
-            ],
+          content: AsukaContentWidget(
+            icon: icon,
+            content: content,
+            actions: action == null ? null : [action],
+            type: AsukaType.snackbar,
           ),
         );
 
@@ -102,8 +85,8 @@ class AsukaSnackbar extends SnackBar {
       AsukaSnackbar._(
         key,
         content,
-        Color(0xFFE6CA72),
-        icon: Icons.warning,
+        warningConfig.color,
+        icon: warningConfig.icon,
         width: width,
         elevation: elevation,
       );
@@ -132,8 +115,8 @@ class AsukaSnackbar extends SnackBar {
       AsukaSnackbar._(
         key,
         content,
-        Color(0xffFA5456),
-        icon: Icons.report,
+        alertConfig.color,
+        icon: alertConfig.icon,
         width: width,
         elevation: elevation,
       );
@@ -163,9 +146,9 @@ class AsukaSnackbar extends SnackBar {
       AsukaSnackbar._(
         key,
         content,
-        Color(0xff3196DA),
+        infoConfig.color,
         action: snackBarAction,
-        icon: Icons.help,
+        icon: infoConfig.icon,
         width: width,
         elevation: elevation,
       );
@@ -195,9 +178,9 @@ class AsukaSnackbar extends SnackBar {
       AsukaSnackbar._(
         key,
         content,
-        Color(0xFF80AD49),
+        successConfig.color,
         action: snackBarAction,
-        icon: Icons.check_circle,
+        icon: successConfig.icon,
         width: width,
         elevation: elevation,
       );
@@ -226,7 +209,7 @@ class AsukaSnackbar extends SnackBar {
       AsukaSnackbar._(
         key,
         content,
-        Color(0xff484848),
+        messageConfig.color,
         width: width,
         elevation: elevation,
       );

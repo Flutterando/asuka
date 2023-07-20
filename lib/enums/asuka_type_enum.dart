@@ -1,0 +1,4 @@
+enum AsukaType {
+  snackbar,
+  materialBanner,
+}
