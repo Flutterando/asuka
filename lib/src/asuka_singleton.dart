@@ -182,8 +182,7 @@ class _Asuka {
   ///```
   ///
   ///This code generates an **ElevatedButton**, when pressed, it calls **controller.onClickBottomSheet()**
-
-  material.PersistentBottomSheetController<T> showBottomSheet<T>(
+  material.PersistentBottomSheetController showBottomSheet(
       Widget Function(BuildContext) builder,
       {Color? backgroundColor,
       double? elevation,
