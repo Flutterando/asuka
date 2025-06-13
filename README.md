@@ -1,3 +1,11 @@
+# Asuka package is being discontinued
+
+We would like to inform the community that the Asuka package will be discontinued.
+Since Flutter has evolved and the built-in ScaffoldMessenger now provides excellent support for snackbars and related UI messages, maintaining a separate solution is no longer necessary.
+Asuka was created to fill a gap in the early days of Flutter, but today the official APIs are more than capable.
+The package will no longer receive updates or bug fixes. The repository will remain available in read-only mode for historical reference.
+Thank you to everyone who supported and used Asuka over the years!
+
 <a name="readme-top"></a>
 
 <h1 align="center">ASUKA - Snackbars, Dialogs and more, the simple way.</h1>
